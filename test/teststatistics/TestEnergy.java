@@ -1,14 +1,14 @@
 package teststatistics;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+import statistics.Energy;
 
 /**
  * Class for creating / testing the Energy class.
  * @author David Cook
- * @version 0.1
  */
 public class TestEnergy {
 
@@ -31,5 +31,6 @@ public class TestEnergy {
   @Test
   public void testCreateEnergy() {
     Energy testEnergy = new Energy(standardCarbs, standardCalories);
+    assertEquals("Can't get carb value from energy", testEnergy.getCarbs(), standardCarbs, 0.0);
   }
 }
