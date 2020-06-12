@@ -7,7 +7,11 @@ package main.java.statistics;
  * @author David Cook
  *
  */
+
+
 public class Energy {
+
+  private double carbs;
 
   /**
    * Constructor for the energy class.
@@ -16,15 +20,15 @@ public class Energy {
    * @param calories - Calorie value for the new entry
    */
   public Energy(double carbs, double calories) {
-    // TODO Auto-generated constructor stub
+    this.carbs = carbs;
   }
 
   /**
-   * Method for retuing the carb value of the Energy Object.
+   * Method for returning the carb value of the Energy Object.
    * @return double - carb value.
    */
   public double getCarbs() {
-    return 25.0;
+    return this.carbs;
   }
 
 }
