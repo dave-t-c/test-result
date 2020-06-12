@@ -1,6 +1,7 @@
 package test.java.statistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import main.java.statistics.Energy;
 import org.junit.Before;
@@ -77,5 +78,14 @@ public class TestEnergy {
   public void testObjectsEquality() {
     Energy duplicateEnergy = new Energy(standardEnergy.getCarbs(), standardEnergy.getCalories());
     assertEquals("Can't get equal objects", standardEnergy, duplicateEnergy);
+  }
+  
+  /**
+   * Test to see if two different objects are equal.
+   * The equals method should return false.
+   */
+  @Test
+  public void testDiffObjectsEquality() {
+    assertFalse("Can't get unequal objects", standardEnergy.equals(diffEnergy));
   }
 }
