@@ -1,4 +1,4 @@
-package statistics;
+package main.java.statistics;
 
 /**
  * Class for storing the Energy section of a test result.

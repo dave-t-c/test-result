@@ -1,10 +1,11 @@
-package teststatistics;
+package test.java.statistics;
 
 import static org.junit.Assert.assertEquals;
 
+import main.java.statistics.Energy;
 import org.junit.Before;
 import org.junit.Test;
-import statistics.Energy;
+
 
 /**
  * Class for creating / testing the Energy class.
