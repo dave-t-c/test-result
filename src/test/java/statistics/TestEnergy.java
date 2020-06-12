@@ -46,4 +46,13 @@ public class TestEnergy {
     Energy testEnergy = new Energy(diffCarbs, standardCalories);
     assertEquals("Can't get diff carb value", testEnergy.getCarbs(), diffCarbs, 0.0);
   }
+  
+  /**
+   * Test to try and get the calories value for the energy Object.
+   */
+  @Test
+  public void testGetCalorieValue() {
+    Energy testEnergy = new Energy(standardCarbs, standardCalories);
+    assertEquals("Can't get calories from energy", testEnergy.getCalories(), standardCalories, 0.0);
+  }
 }
