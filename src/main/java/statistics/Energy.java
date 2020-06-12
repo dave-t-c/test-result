@@ -1,5 +1,7 @@
 package main.java.statistics;
 
+import java.util.Objects;
+
 /**
  * Class for storing the Energy section of a test result.
  * This class will store the carbohydrate and calorie values 
@@ -42,13 +44,21 @@ public class Energy {
   }
   
   /**
-   * Checks the equality of an Object with the Energy.
-   * Should return true if the contents of the object are equal.
-   * @return boolean - If the objects are equal
-   */
+  -   * Checks the equality of an Object with the Energy.
+  -   * Should return true if the contents of the object are equal.
+  -   * @return boolean - If the objects are equal
+  -   */
   @Override
   public boolean equals(Object obj) {
-    return true;
+    if (this == obj) {
+      return true;
+    }
+    if (!(obj instanceof Energy)) {
+      return false;
+    }
+    Energy other = (Energy) obj;
+    return Double.doubleToLongBits(calories) == Double.doubleToLongBits(other.calories)
+        && Double.doubleToLongBits(carbs) == Double.doubleToLongBits(other.carbs);
   }
 
 }
