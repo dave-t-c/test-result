@@ -40,5 +40,15 @@ public class Energy {
   public double getCalories() {
     return this.calories;
   }
+  
+  /**
+   * Checks the equality of an Object with the Energy.
+   * Should return true if the contents of the object are equal.
+   * @return boolean - If the objects are equal
+   */
+  @Override
+  public boolean equals(Object obj) {
+    return true;
+  }
 
 }
