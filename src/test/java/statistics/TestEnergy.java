@@ -16,6 +16,7 @@ public class TestEnergy {
   private double standardCarbs;
   private double diffCarbs;
   private double standardCalories;
+  private double diffCalories;
 
   /**
    * Setup all the required values before each test is run.
@@ -26,6 +27,7 @@ public class TestEnergy {
     standardCarbs = 25.0;
     diffCarbs = 35.0;
     standardCalories = 300.5;
+    diffCalories = 200.5;
   }
 
   /**
@@ -54,5 +56,15 @@ public class TestEnergy {
   public void testGetCalorieValue() {
     Energy testEnergy = new Energy(standardCarbs, standardCalories);
     assertEquals("Can't get calories from energy", testEnergy.getCalories(), standardCalories, 0.0);
+  }
+  
+  /**
+   * Test to try and get a different value from the Energy Object than the one used
+   * in the previous test.
+   */
+  @Test
+  public void testGetDiffCalorieValue() {
+    Energy testEnergy = new Energy(standardCarbs, diffCalories);
+    assertEquals("Can't get diff calorie value", testEnergy.getCalories(), diffCalories, 0.0);
   }
 }
