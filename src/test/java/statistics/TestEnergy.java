@@ -16,7 +16,6 @@ public class TestEnergy {
   private double standardCarbs;
   private double diffCarbs;
   private double standardCalories;
-  private double diffCalories;
 
   /**
    * Setup all the required values before each test is run.
