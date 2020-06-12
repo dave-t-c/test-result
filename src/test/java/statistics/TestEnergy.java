@@ -17,9 +17,12 @@ public class TestEnergy {
   private double diffCarbs;
   private double standardCalories;
   private double diffCalories;
+  private Energy standardEnergy;
+  private Energy diffEnergy;
 
   /**
-   * Setup all the required values before each test is run.
+   * Setup all the required values and Energy Objects before each test is run
+   * to ensure that the values are correct.
    * @throws Exception thrown if an error occurs when setting the values.
    */
   @Before
@@ -28,6 +31,8 @@ public class TestEnergy {
     diffCarbs = 35.0;
     standardCalories = 300.5;
     diffCalories = 200.5;
+    standardEnergy = new Energy(standardCarbs, standardCalories);
+    diffEnergy = new Energy(diffCarbs, diffCalories);
   }
 
   /**
@@ -35,8 +40,7 @@ public class TestEnergy {
    */
   @Test
   public void testCreateEnergy() {
-    Energy testEnergy = new Energy(standardCarbs, standardCalories);
-    assertEquals("Can't get carb value from energy", testEnergy.getCarbs(), standardCarbs, 0.0);
+    assertEquals("Can't get carb value from energy", standardEnergy.getCarbs(), standardCarbs, 0.0);
   }
   
   /**
@@ -45,8 +49,7 @@ public class TestEnergy {
    */
   @Test
   public void testCreateEnergyDiffCarbs() {
-    Energy testEnergy = new Energy(diffCarbs, standardCalories);
-    assertEquals("Can't get diff carb value", testEnergy.getCarbs(), diffCarbs, 0.0);
+    assertEquals("Can't get diff carb value", diffEnergy.getCarbs(), diffCarbs, 0.0);
   }
   
   /**
@@ -54,8 +57,7 @@ public class TestEnergy {
    */
   @Test
   public void testGetCalorieValue() {
-    Energy testEnergy = new Energy(standardCarbs, standardCalories);
-    assertEquals("Can't get calories from energy", testEnergy.getCalories(), standardCalories, 0.0);
+    assertEquals("Can't get calories", standardEnergy.getCalories(), standardCalories, 0.0);
   }
   
   /**
@@ -64,7 +66,6 @@ public class TestEnergy {
    */
   @Test
   public void testGetDiffCalorieValue() {
-    Energy testEnergy = new Energy(standardCarbs, diffCalories);
-    assertEquals("Can't get diff calorie value", testEnergy.getCalories(), diffCalories, 0.0);
+    assertEquals("Can't get diff calorie value", diffEnergy.getCalories(), diffCalories, 0.0);
   }
 }
