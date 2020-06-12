@@ -31,4 +31,8 @@ public class Energy {
     return this.carbs;
   }
 
+  public double getCalories() {
+    return 300.5;
+  }
+
 }
