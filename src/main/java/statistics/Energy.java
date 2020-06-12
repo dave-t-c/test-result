@@ -12,6 +12,7 @@ package main.java.statistics;
 public class Energy {
 
   private double carbs;
+  private double calories;
 
   /**
    * Constructor for the energy class.
@@ -21,18 +22,23 @@ public class Energy {
    */
   public Energy(double carbs, double calories) {
     this.carbs = carbs;
+    this.calories = calories;
   }
 
   /**
-   * Method for returning the carb value of the Energy Object.
-   * @return double - carb value.
+   * Method for returning the carbohydrate value of the Energy Object.
+   * @return carbs - carbohydrate value 
    */
   public double getCarbs() {
     return this.carbs;
   }
 
+  /**
+   * Method for returning the calorie value of the Energy Object.
+   * @return calories - the calorie value of the Object.
+   */
   public double getCalories() {
-    return 300.5;
+    return this.calories;
   }
 
 }
