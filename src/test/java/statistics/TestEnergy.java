@@ -68,4 +68,14 @@ public class TestEnergy {
   public void testGetDiffCalorieValue() {
     assertEquals("Can't get diff calorie value", diffEnergy.getCalories(), diffCalories, 0.0);
   }
+  
+  /**
+   * Test to try and see if two objects are equal. These objects should be equal as 
+   * they have the same components.
+   */
+  @Test
+  public void testObjectsEquality() {
+    Energy duplicateEnergy = new Energy(standardEnergy.getCarbs(), standardEnergy.getCalories());
+    assertEquals("Can't get equal objects", standardEnergy, duplicateEnergy);
+  }
 }
