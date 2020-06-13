@@ -125,4 +125,13 @@ public class TestEnergy {
     assertEquals("Cannot get a different formatted String", "Carbs: 35.0, Calories: 200.5",
         diffEnergy.toString());
   }
+  
+  /**
+   * Test to try and clone an Energy Object.
+   * The clone should have the same values as the original object.
+   */
+  @Test
+  public void testGetClone() {
+    assertEquals("Can't clone successfully", standardEnergy, standardEnergy.clone());
+  }
 }
