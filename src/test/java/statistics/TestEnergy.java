@@ -116,4 +116,13 @@ public class TestEnergy {
     assertEquals("Cannot get a formatted String", "Carbs: 25.0, Calories: 300.5",
         standardEnergy.toString());
   }
+  
+  /**
+   * Test to try and get a formatted String for an Energy Object with different values.
+   */
+  @Test
+  public void testGetDifferentFormmatedString() {
+    assertEquals("Cannot get a different formatted String", "Carbs: 35.0, Calories: 200.5",
+        diffEnergy.toString());
+  }
 }
