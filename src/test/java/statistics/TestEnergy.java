@@ -107,4 +107,13 @@ public class TestEnergy {
   public void testDifferentHashCodeValues() {
     assertTrue("Can't get different hash code", standardEnergy.hashCode() != diffEnergy.hashCode());
   }
+  
+  /**
+   * Test to try and get a formatted String from the Energy class showing its carbs and calories.
+   */
+  @Test
+  public void testGetFormattedString() {
+    assertEquals("Cannot get a formatted String", "Carbs: 25, Calories: 300.5",
+        standardEnergy.toString());
+  }
 }
