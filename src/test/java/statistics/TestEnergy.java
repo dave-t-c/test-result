@@ -106,6 +106,6 @@ public class TestEnergy {
    */
   @Test
   public void testDifferentHashCodeValues() {
-    assertTrue("Can't get different hash codes", standardEnergy.hashCode() != diffEnergy.hashCode());
+    assertTrue("Can't get different hash code", standardEnergy.hashCode() != diffEnergy.hashCode());
   }
 }
