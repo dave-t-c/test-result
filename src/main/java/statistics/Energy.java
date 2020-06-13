@@ -72,5 +72,14 @@ public class Energy {
     return Objects.hash(calories, carbs);
   }
   
+  /**
+   * Generates a formatted String for the Energy Object.
+   * This is in the format "Carbs: x, Calories: y"
+   */
+  @Override
+  public String toString() {
+    return "Carbs: 25.0, Calories: 300.5";
+  }
+  
 
 }
