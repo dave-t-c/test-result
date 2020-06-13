@@ -11,8 +11,8 @@ import java.util.Objects;
 
 public class Energy {
 
-  private double carbs;
-  private double calories;
+  private final double carbs;
+  private final double calories;
 
   /**
    * Constructor for the energy class.
