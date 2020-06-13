@@ -25,3 +25,6 @@ hs_err_pid*
 # bin folder
 /bin/
 /target/
+
+# macOS Files #
+*.DS_Store
