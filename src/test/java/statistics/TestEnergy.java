@@ -113,7 +113,7 @@ public class TestEnergy {
    */
   @Test
   public void testGetFormattedString() {
-    assertEquals("Cannot get a formatted String", "Carbs: 25, Calories: 300.5",
+    assertEquals("Cannot get a formatted String", "Carbs: 25.0, Calories: 300.5",
         standardEnergy.toString());
   }
 }
