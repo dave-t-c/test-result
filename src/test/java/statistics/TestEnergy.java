@@ -8,7 +8,6 @@ import main.java.statistics.Energy;
 import org.junit.Before;
 import org.junit.Test;
 
-
 /**
  * Class for creating / testing the Energy class.
  * @author David Cook
