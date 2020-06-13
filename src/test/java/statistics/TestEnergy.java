@@ -20,6 +20,7 @@ public class TestEnergy {
   private double diffCalories;
   private Energy standardEnergy;
   private Energy diffEnergy;
+  private Energy duplicateEnergy;
 
   /**
    * Setup all the required values and Energy Objects before each test is run
@@ -34,6 +35,7 @@ public class TestEnergy {
     diffCalories = 200.5;
     standardEnergy = new Energy(standardCarbs, standardCalories);
     diffEnergy = new Energy(diffCarbs, diffCalories);
+    duplicateEnergy = new Energy(standardEnergy.getCarbs(), standardEnergy.getCalories());
   }
 
   /**
@@ -76,7 +78,6 @@ public class TestEnergy {
    */
   @Test
   public void testObjectsEquality() {
-    Energy duplicateEnergy = new Energy(standardEnergy.getCarbs(), standardEnergy.getCalories());
     assertEquals("Can't get equal objects", standardEnergy, duplicateEnergy);
   }
   
@@ -95,7 +96,6 @@ public class TestEnergy {
    */
   @Test
   public void testIdenticalHashCode() {
-    Energy duplicateEnergy = new Energy(standardEnergy.getCarbs(), standardEnergy.getCalories());
     assertEquals("Can't get same hash code", standardEnergy.hashCode(), duplicateEnergy.hashCode());
   }
 }
