@@ -2,6 +2,7 @@ package test.java.statistics;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import main.java.statistics.Energy;
 import org.junit.Before;
@@ -97,5 +98,14 @@ public class TestEnergy {
   @Test
   public void testIdenticalHashCode() {
     assertEquals("Can't get same hash code", standardEnergy.hashCode(), duplicateEnergy.hashCode());
+  }
+  
+  /**
+   * Test to see if the hash code for two different Energy objects is different.
+   * The hash codes should be different as the Objects contain different values.
+   */
+  @Test
+  public void testDifferentHashCodeValues() {
+    assertTrue("Can't get different hash codes", standardEnergy.hashCode() != diffEnergy.hashCode());
   }
 }
