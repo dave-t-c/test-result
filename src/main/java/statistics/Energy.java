@@ -4,10 +4,8 @@ package main.java.statistics;
  * Class for storing the Energy section of a test result.
  * This class will store the carbohydrate and calorie values 
  * for each test result.
- * @author David Cook
- *
+ * @author David Cooks
  */
-
 
 public class Energy {
 
@@ -42,10 +40,10 @@ public class Energy {
   }
   
   /**
-  -   * Checks the equality of an Object with the Energy.
-  -   * Should return true if the contents of the object are equal.
-  -   * @return boolean - If the objects are equal
-  -   */
+   * Checks the equality of an Object with the Energy.
+   * Should return true if the contents of the object are equal.
+   * @return boolean - If the objects are equal
+   */
   @Override
   public boolean equals(Object obj) {
     if (this == obj) {
@@ -58,5 +56,6 @@ public class Energy {
     return Double.doubleToLongBits(calories) == Double.doubleToLongBits(other.calories)
         && Double.doubleToLongBits(carbs) == Double.doubleToLongBits(other.carbs);
   }
+  
 
 }
