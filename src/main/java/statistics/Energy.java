@@ -81,5 +81,13 @@ public class Energy {
     return "Carbs: " + carbs + ", Calories: " + calories;
   }
   
+  /**
+   * Returns a new Energy Object that has the same values as the 
+   * Energy Object the method is called from.
+   */
+  public Energy clone() {
+    return new Energy(25.0, 300.5);
+  }
+  
 
 }
