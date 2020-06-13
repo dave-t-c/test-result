@@ -86,7 +86,7 @@ public class Energy {
    * Energy Object the method is called from.
    */
   public Energy clone() {
-    return new Energy(25.0, 300.5);
+    return new Energy(this.carbs, this.calories);
   }
   
 
