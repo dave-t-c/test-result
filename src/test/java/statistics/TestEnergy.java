@@ -88,4 +88,14 @@ public class TestEnergy {
   public void testDiffObjectsEquality() {
     assertFalse("Can't get unequal objects", standardEnergy.equals(diffEnergy));
   }
+  
+  /**
+   * Test to see if two equal object have the same hash code.
+   * If the objects are equal then they should have the same hash code. 
+   */
+  @Test
+  public void testIdenticalHashCode() {
+    Energy duplicateEnergy = new Energy(standardEnergy.getCarbs(), standardEnergy.getCalories());
+    assertEquals("Can't get same hash code", standardEnergy.hashCode(), duplicateEnergy.hashCode());
+  }
 }
