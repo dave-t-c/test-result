@@ -78,7 +78,7 @@ public class Energy {
    */
   @Override
   public String toString() {
-    return "Carbs: 25.0, Calories: 300.5";
+    return "Carbs: " + carbs + ", Calories: " + calories;
   }
   
 
