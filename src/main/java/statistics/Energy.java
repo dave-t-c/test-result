@@ -1,7 +1,5 @@
 package main.java.statistics;
 
-import java.util.Objects;
-
 /**
  * Class for storing the Energy section of a test result.
  * This class will store the carbohydrate and calorie values 
