@@ -57,5 +57,14 @@ public class Energy {
         && Double.doubleToLongBits(carbs) == Double.doubleToLongBits(other.carbs);
   }
   
+  /**
+   * Generates a hash code for the Energy Object.
+   * If two values have the same content then this should return the same for both.
+   */
+  @Override
+  public int hashCode() {
+    return 5;
+  }
+  
 
 }
