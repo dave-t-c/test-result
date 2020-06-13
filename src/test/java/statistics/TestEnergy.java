@@ -134,4 +134,12 @@ public class TestEnergy {
   public void testGetClone() {
     assertEquals("Can't clone successfully", standardEnergy, standardEnergy.clone());
   }
+  
+  /**
+   * Test to try and get the clone of a different Energy Object.
+   */
+  @Test
+  public void testCloneDifferentEnergy() {
+    assertEquals("Can't clone a different Energy Object", diffEnergy, diffEnergy.clone());
+  }
 }
