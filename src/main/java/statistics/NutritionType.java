@@ -21,6 +21,13 @@ public interface NutritionType {
   public double getTotal();
   
   /**
+   * Get the name for the nutrition type specified. 
+   * This will be used to get it from the statistics hash map.
+   * @return - String - the name of the nutrition type, e.g. carbs.
+   */
+  public String getName();
+  
+  /**
    * Adds a value to the Hash Map for this nutrition type.
    * @param name - Name of the type to be added.
    * @param value - Value for the new type being added.
