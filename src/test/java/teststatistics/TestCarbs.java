@@ -22,7 +22,7 @@ public class TestCarbs {
    * and get the total of it.
    */
   @Test
-  public void test() {
+  public void testCreateNewCarbNutrition() {
     CarbNutrition testCarbs = new CarbNutrition();
     assertEquals("Can't create new instance for carbs", testCarbs.getTotal(), (Double) 0.0, 0.0);
   }
