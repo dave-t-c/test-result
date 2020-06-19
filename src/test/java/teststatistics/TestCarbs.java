@@ -13,8 +13,12 @@ import org.junit.Test;
  */
 public class TestCarbs {
 
+  //Variables required for the tests.
+  private CarbNutrition testCarbs;
+  
   @Before
   public void setUp() throws Exception {
+    testCarbs = new CarbNutrition();
   }
 
   /**
@@ -23,7 +27,6 @@ public class TestCarbs {
    */
   @Test
   public void testCreateNewCarbNutrition() {
-    CarbNutrition testCarbs = new CarbNutrition();
     assertEquals("Can't create new instance for carbs", 0.0, testCarbs.getTotal(), 0.0);
   }
   
@@ -32,7 +35,6 @@ public class TestCarbs {
    */
   @Test
   public void testAddNutritionValue() {
-    CarbNutrition testCarbs = new CarbNutrition();
     testCarbs.addValue("Sample", 3.5);
     assertEquals("Can't add the new value", 3.5, testCarbs.getTotal(), 0.0);
   }
