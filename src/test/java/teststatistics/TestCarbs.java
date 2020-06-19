@@ -24,7 +24,17 @@ public class TestCarbs {
   @Test
   public void testCreateNewCarbNutrition() {
     CarbNutrition testCarbs = new CarbNutrition();
-    assertEquals("Can't create new instance for carbs", testCarbs.getTotal(), (Double) 0.0, 0.0);
+    assertEquals("Can't create new instance for carbs", 0.0, testCarbs.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and add a value to the carb class and then return the correct new total.
+   */
+  @Test
+  public void testAddNutritionValue() {
+    CarbNutrition testCarbs = new CarbNutrition();
+    testCarbs.addValue("Sample", 3.5);
+    assertEquals("Can't add the new value", 3.5, testCarbs.getTotal(), 0.0);
   }
 
 }
