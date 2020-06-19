@@ -10,9 +10,11 @@ import java.util.Set;
  */
 public class CarbNutrition implements NutritionType {
 
+  double total = 0.0;
+
   @Override
   public double getTotal() {
-    return 0;
+    return total;
   }
   
   @Override 
@@ -22,7 +24,7 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-
+    total += value;
   }
 
   @Override
