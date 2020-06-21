@@ -19,7 +19,7 @@ public class CarbNutrition implements NutritionType {
   
   @Override 
   public String getName() {
-    return null;
+    return "Carbs";
   }
 
   @Override
