@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import main.java.statistics.CarbNutrition;
 import org.junit.Before;
@@ -45,6 +46,15 @@ public class TestCarbs {
   @Test
   public void testGetCarbsName() {
     assertEquals("Cannot get correct name for carbs class.", "Carbs", testCarbs.getName());
+  }
+  
+  /**
+   * Test to try and get the set of names from the carbs class.
+   * The set should be empty as no items have been added.
+   */
+  @Test
+  public void testGetValueNamesSet() {
+    assertTrue("Cannot get value names", testCarbs.getSubcategoryNames().isEmpty());
   }
 
 }
