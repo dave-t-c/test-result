@@ -1,5 +1,6 @@
 package main.java.statistics;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public Set<String> getSubcategoryNames() {
-    return null;
+    return Collections.emptySet();
   }
 
   @Override
