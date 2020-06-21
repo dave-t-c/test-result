@@ -38,5 +38,13 @@ public class TestCarbs {
     testCarbs.addValue("Sample", 3.5);
     assertEquals("Can't add the new value", 3.5, testCarbs.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and get the name that is assigned to the carbs object.
+   */
+  @Test
+  public void testGetCarbsName() {
+    assertEquals("Cannot get correct name for carbs class.", "Carbs", testCarbs.getName());
+  }
 
 }
