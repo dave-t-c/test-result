@@ -56,5 +56,15 @@ public class TestCarbs {
   public void testGetValueNamesSet() {
     assertTrue("Cannot get value names", testCarbs.getSubcategoryNames().isEmpty());
   }
+  
+  /**
+   * Test to try and add a value to the carbs class and then return the correct name.
+   * This should return a set with one item in that is 'Sample'.
+   */
+  @Test
+  public void testGetCorrectName() { 
+    testCarbs.addValue("Sample", 32.5);
+    assertTrue("Cannot get correct name", testCarbs.getSubcategoryNames().contains("Sample"));
+  }
 
 }
