@@ -35,7 +35,7 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public Set<String> getSubcategoryNames() {
-    return nameSet;
+    return categoryMap.keySet();
   }
   
   @Override
