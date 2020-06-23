@@ -11,11 +11,11 @@ import java.util.Set;
  */
 public class CarbNutrition implements NutritionType {
 
-  private double total = 0.0;
+  private Double total = 0.0;
   private Set<String> nameSet = new HashSet<>(); 
 
   @Override
-  public double getTotal() {
+  public Double getTotal() {
     return total;
   }
   
@@ -34,10 +34,18 @@ public class CarbNutrition implements NutritionType {
   public Set<String> getSubcategoryNames() {
     return nameSet;
   }
+  
+  @Override
+  public Double getSubcategoryValue(String name) {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
   @Override
   public HashMap<String, Double> getValues() {
     return null;
   }
+
+  
 
 }
