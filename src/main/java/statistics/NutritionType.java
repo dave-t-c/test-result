@@ -18,7 +18,7 @@ public interface NutritionType {
    * This should return the total of the two combined.
    * @return double - total of that type of nutrition
    */
-  public double getTotal();
+  public Double getTotal();
   
   /**
    * Get the name for the nutrition type specified. 
