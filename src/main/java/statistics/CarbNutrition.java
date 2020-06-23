@@ -37,8 +37,7 @@ public class CarbNutrition implements NutritionType {
   
   @Override
   public Double getSubcategoryValue(String name) {
-    // TODO Auto-generated method stub
-    return null;
+    return 25.0;
   }
 
   @Override
