@@ -42,6 +42,15 @@ public interface NutritionType {
   public Set<String> getSubcategoryNames();
   
   /**
+   * Gets the value for a specified subcategory.
+   * This could be useful when you want to get a specific value but do not
+   * want to get a copy of the hash map and do it yourself.
+   * @param name - The subcategory to be looked for.
+   * @return - The value for the given subcateogry -> will return 0.0 if not found 
+   */
+  public Double getSubcategoryValue(String name);
+  
+  /**
    * Gets the values for that type of nutrition.
    * E.g.: Carbs, The Strings would be Fast Acting and Long Acting, 
    * the Doubles could be 35.0 and 22.0.
