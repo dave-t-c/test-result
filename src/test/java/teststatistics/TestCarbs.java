@@ -87,5 +87,14 @@ public class TestCarbs {
     testCarbs.addValue("Other", 35.0);
     assertEquals("Can't get diff category", 35.0, testCarbs.getSubcategoryValue("Other"), 0.0);
   }
+  
+  /**
+   * Test to try and get the sub-category value for a category that hasn't been added.
+   * This should return 0.0 as no values have been added.
+   */
+  @Test
+  public void testGetSucategoryNotExist() { 
+    assertEquals("Can't get non added category", 0.0, testCarbs.getSubcategoryValue("A"), 0.0);
+  }
 
 }
