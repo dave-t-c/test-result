@@ -77,5 +77,15 @@ public class TestCarbs {
     testCarbs.addValue("Example", 25.0);
     assertEquals("Can't get category value", 25.0, testCarbs.getSubcategoryValue("Example"), 0.0);
   }
+  
+  /**
+   * Test to try and get a different sub category value from the carbs class.
+   * The value should be different as a second value has been added with a different name.
+   */
+  @Test
+  public void testGetDifferentSubCategory() {
+    testCarbs.addValue("Other", 35.0);
+    assertEquals("Can't get diff category", 35.0, testCarbs.getSubcategoryValue("Other"), 0.0);
+  }
 
 }
