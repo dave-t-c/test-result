@@ -93,7 +93,7 @@ public class TestCarbs {
    * This should return 0.0 as no values have been added.
    */
   @Test
-  public void testGetSucategoryNotExist() { 
+  public void testGetSubcategoryNotExist() { 
     assertEquals("Can't get non added category", 0.0, testCarbs.getSubcategoryValue("A"), 0.0);
   }
 
