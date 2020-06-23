@@ -66,5 +66,16 @@ public class TestCarbs {
     testCarbs.addValue("Sample", 32.5);
     assertTrue("Cannot get correct name", testCarbs.getSubcategoryNames().contains("Sample"));
   }
+  
+  /**
+   * Test to try and get a specific value for a given sub-category.
+   * This should return 25.0 for the Example sub-category as this is what has been
+   * added to the Carbs class.
+   */
+  @Test
+  public void testGetSubcategoryValue() {
+    testCarbs.addValue("Example", 25.0);
+    assertEquals("Can't get category value", 25.0, testCarbs.getSubcategoryValue("Example"), 0.0);
+  }
 
 }
