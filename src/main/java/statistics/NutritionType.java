@@ -46,7 +46,7 @@ public interface NutritionType {
    * This could be useful when you want to get a specific value but do not
    * want to get a copy of the hash map and do it yourself.
    * @param name - The subcategory to be looked for.
-   * @return - The value for the given subcateogry -> will return 0.0 if not found 
+   * @return - The value for the given subcateogry -> will return 0.0 if not found. 
    */
   public Double getSubcategoryValue(String name);
   
