@@ -1,7 +1,6 @@
 package main.java.statistics;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -12,7 +11,7 @@ import java.util.Set;
 public class CarbNutrition implements NutritionType {
 
   private Double total = 0.0;
-  private Map<String, Double> categoryMap = new HashMap<>();
+  private HashMap<String, Double> categoryMap = new HashMap<>();
 
   @Override
   public Double getTotal() {
@@ -47,7 +46,7 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public HashMap<String, Double> getValues() {
-    return new HashMap<String, Double>();
+    return categoryMap;
   }
 
   
