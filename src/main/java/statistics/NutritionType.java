@@ -42,13 +42,19 @@ public interface NutritionType {
   public Set<String> getSubcategoryNames();
   
   /**
-   * Gets the value for a specified subcategory.
+   * Gets the value for a specified sub-category.
    * This could be useful when you want to get a specific value but do not
    * want to get a copy of the hash map and do it yourself.
-   * @param name - The subcategory to be looked for.
-   * @return - The value for the given subcateogry -> will return 0.0 if not found. 
+   * @param name - The sub-category to be looked for.
+   * @return - The value for the given sub-category -> will return 0.0 if not found. 
    */
   public Double getSubcategoryValue(String name);
+  
+  /**
+   * Removes a sub-category from the Nutrition Type.
+   * @param name - The name of the sub-category to be removed.
+   */
+  public void removeSubcategory(String name);
   
   /**
    * Gets the values for that type of nutrition.
