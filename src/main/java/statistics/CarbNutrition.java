@@ -47,7 +47,7 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public HashMap<String, Double> getValues() {
-    return null;
+    return new HashMap<String, Double>();
   }
 
   
