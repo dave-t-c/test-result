@@ -39,6 +39,11 @@ public class CarbNutrition implements NutritionType {
   public Double getSubcategoryValue(String name) {
     return categoryMap.get(name) == null ? 0.0 : categoryMap.get(name);
   }
+  
+  @Override
+  public void removeSubcategory(String name) {
+
+  }
 
   @Override
   public HashMap<String, Double> getValues() {
