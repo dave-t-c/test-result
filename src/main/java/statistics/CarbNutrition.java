@@ -37,7 +37,12 @@ public class CarbNutrition implements NutritionType {
   
   @Override
   public Double getSubcategoryValue(String name) {
-    return categoryMap.get(name);
+    Double categoryValue = categoryMap.get(name);
+    if (categoryValue == null) {
+      return 0.0;
+    } else {
+      return categoryValue;
+    }
   }
 
   @Override
