@@ -105,5 +105,16 @@ public class TestCarbs {
   public void testGetCategoryValuePairs() {
     assertTrue("Cannot get correct category pairs", testCarbs.getValues().isEmpty());
   }
+  
+  /**
+   * Test to add a sub-category to the carbs nutrition class and then
+   * get the values for it. The values should not be empty and should contain the 
+   * key added.
+   */
+  @Test
+  public void testGetCategoryNonEmpty() {
+    testCarbs.addValue("Example", 5.0);
+    assertEquals("Can't get correct value", 5.0, testCarbs.getValues().get("Example"), 0.0);
+  }
 
 }
