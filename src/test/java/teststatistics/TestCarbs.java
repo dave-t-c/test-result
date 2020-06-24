@@ -96,5 +96,14 @@ public class TestCarbs {
   public void testGetSubcategoryNotExist() { 
     assertEquals("Can't get non added category", 0.0, testCarbs.getSubcategoryValue("A"), 0.0);
   }
+  
+  /**
+   * Test to try and get the set of category value pairs from the carbs nutrition class.
+   * This should return an empty hash map as nothing has been added.
+   */
+  @Test
+  public void testGetCategoryValuePairs() {
+    assertTrue("Cannot get correct category pairs", testCarbs.getValues().isEmpty());
+  }
 
 }
