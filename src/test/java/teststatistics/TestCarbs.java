@@ -149,5 +149,15 @@ public class TestCarbs {
     testCarbs.removeSubcategory("Example");
     assertEquals("Can't decrease total", 0.0, testCarbs.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and remove a subcategory that does not exist, the total 
+   * should not be decreased as the category does not exist.
+   */
+  @Test
+  public void testDecreaseTotalNotExist() {
+    testCarbs.removeSubcategory("Example");
+    assertEquals("Can't keep total the same", 0.0, testCarbs.getTotal(), 0.0);
+  }
 
 }
