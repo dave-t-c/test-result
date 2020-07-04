@@ -127,5 +127,16 @@ public class TestCarbs {
     testCarbs.removeSubcategory("Example");
     assertTrue("Cannot remove subcategory", testCarbs.getSubcategoryNames().isEmpty());
   }
+  
+  /**
+   * Test to remove a different sub category.
+   * The different subcategory should be removed and the set should be empty.
+   */
+  @Test
+  public void testRemoveDifferentSubcategory() {
+    testCarbs.addValue("Other", 25.5);
+    testCarbs.removeSubcategory("Other");
+    assertTrue("Cannot remove different sub category", testCarbs.getSubcategoryNames().isEmpty());
+  }
 
 }
