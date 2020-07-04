@@ -138,5 +138,16 @@ public class TestCarbs {
     testCarbs.removeSubcategory("Other");
     assertTrue("Cannot remove different sub category", testCarbs.getSubcategoryNames().isEmpty());
   }
+  
+  /**
+   * Test to try and remove a subcategory, the total for the carbs class 
+   * should decrease by this amount.
+   */
+  @Test
+  public void testDecreasteTotal() {
+    testCarbs.addValue("Example", 25.0);
+    testCarbs.removeSubcategory("Example");
+    assertEquals("Can't decrease total", 0.0, testCarbs.getTotal(), 0.0);
+  }
 
 }
