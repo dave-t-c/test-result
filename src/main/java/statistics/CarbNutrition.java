@@ -41,7 +41,7 @@ public class CarbNutrition implements NutritionType {
   
   @Override
   public void removeSubcategory(String name) {
-    total -= categoryMap.get(name);
+    total -= categoryMap.containsKey(name) ? categoryMap.get(name) : 0.0;
     categoryMap.remove(name);
   }
 
