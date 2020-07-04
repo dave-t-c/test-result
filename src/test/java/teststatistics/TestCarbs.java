@@ -116,5 +116,16 @@ public class TestCarbs {
     testCarbs.addValue("Example", 5.0);
     assertEquals("Can't get correct value", 5.0, testCarbs.getValues().get("Example"), 0.0);
   }
+  
+  /**
+   * Test to try and remove an item from the carbs class.
+   * The item should not be included in the set.
+   */
+  @Test
+  public void testRemoveSubcategory() {
+    testCarbs.addValue("Example", 4.5);
+    testCarbs.removeSubcategory("Example");
+    assertTrue("Cannot remove subcategory", testCarbs.getSubcategoryNames().isEmpty());
+  }
 
 }
