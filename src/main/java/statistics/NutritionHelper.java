@@ -1,6 +1,7 @@
 package main.java.statistics;
 
 import java.util.HashMap;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * Class for the helper methods for all classes
@@ -10,7 +11,8 @@ import java.util.HashMap;
  */
 public class NutritionHelper {
 
-  public double addValue(String category, HashMap<String, Double> nutritionValues, Double value) {
+  public double addValue(@NonNull String category, HashMap<String, Double> nutritionValues, 
+      @NonNull Double value) {
     nutritionValues.put(category, value);
     return value;
   }
