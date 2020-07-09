@@ -11,6 +11,7 @@ import java.util.HashMap;
 public class NutritionHelper {
 
   public double addValue(String category, HashMap<String, Double> nutritionValues, Double value) {
+    nutritionValues.put(category, value);
     return value;
   }
   
