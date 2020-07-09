@@ -15,9 +15,11 @@ import org.junit.Test;
  */
 public class TestNutritionHelper {
 
-  @Before
-  public void setUp() throws Exception{
+  NutritionHelper testHelper;  
 
+  @Before
+  public void setUp() throws Exception {
+    testHelper = new NutritionHelper();
   }
   
   /**
@@ -26,7 +28,6 @@ public class TestNutritionHelper {
    */
   @Test
   public void testCreateNutritionHelper()  {
-    NutritionHelper testHelper = new NutritionHelper();
     assertEquals("Could not make new NutritionHelper", 
         testHelper.addValue("Example", new HashMap<String, Double>(), 25.0), 25.0, 0.0);
   }
@@ -37,7 +38,6 @@ public class TestNutritionHelper {
    */
   @Test
   public void testAddDifferentValue() {
-    NutritionHelper testHelper = new NutritionHelper();
     assertEquals("Could not add different value",
               testHelper.addValue("Example", new HashMap<String, Double>(), 15.0), 15.0, 0.0);
   }
