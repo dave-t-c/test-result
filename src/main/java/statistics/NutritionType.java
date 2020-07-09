@@ -18,7 +18,14 @@ public interface NutritionType {
    * This should return the total of the two combined.
    * @return double - total of that type of nutrition
    */
-  public double getTotal();
+  public Double getTotal();
+  
+  /**
+   * Get the name for the nutrition type specified. 
+   * This will be used to get it from the statistics hash map.
+   * @return - String - the name of the nutrition type, e.g. carbs.
+   */
+  public String getName();
   
   /**
    * Adds a value to the Hash Map for this nutrition type.
@@ -33,6 +40,21 @@ public interface NutritionType {
    * @return The names of the types of that nutrition.
    */
   public Set<String> getSubcategoryNames();
+  
+  /**
+   * Gets the value for a specified sub-category.
+   * This could be useful when you want to get a specific value but do not
+   * want to get a copy of the hash map and do it yourself.
+   * @param name - The sub-category to be looked for.
+   * @return - The value for the given sub-category -> will return 0.0 if not found. 
+   */
+  public Double getSubcategoryValue(String name);
+  
+  /**
+   * Removes a sub-category from the Nutrition Type.
+   * @param name - The name of the sub-category to be removed.
+   */
+  public void removeSubcategory(String name);
   
   /**
    * Gets the values for that type of nutrition.
