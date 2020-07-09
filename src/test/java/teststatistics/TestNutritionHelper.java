@@ -41,5 +41,16 @@ public class TestNutritionHelper {
     assertEquals("Could not add different value",
               testHelper.addValue("Example", new HashMap<String, Double>(), 15.0), 15.0, 0.0);
   }
+  
+  /**
+   * Test to try and add the example, along with the value to the hash map.
+   * The hash map should contain the key value pair.
+   */
+  @Test
+  public void testAddtoHashMap() {
+    HashMap<String, Double> testMap = new HashMap<>();
+    testHelper.addValue("Example", testMap, 15.0);
+    assertEquals("Could not add to hash map", 15.0, testMap.get("Example"), 0.0);
+  }
 
 }
