@@ -29,7 +29,17 @@ public class TestNutritionHelper {
     NutritionHelper testHelper = new NutritionHelper();
     assertEquals("Could not make new NutritionHelper", 
         testHelper.addValue("Example", new HashMap<String, Double>(), 25.0), 25.0, 0.0);
-    
+  }
+  
+  /**
+   * Test to try and add a different value to the Nutrition helper class.
+   * The value returned should be +15.0
+   */
+  @Test
+  public void testAddDifferentValue() {
+    NutritionHelper testHelper = new NutritionHelper();
+    assertEquals("Could not add different value",
+              testHelper.addValue("Example", new HashMap<String, Double>(), 15.0), 15.0, 0.0);
   }
 
 }
