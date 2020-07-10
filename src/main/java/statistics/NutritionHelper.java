@@ -16,7 +16,7 @@ public class NutritionHelper {
    * @param category - Category to be added.
    * @param nutritionValues - Map containing the values.
    * @param value - The value for the category to be added.
-   * @return
+   * @return - the value the total should be increased by.
    */
   public Double addValue(@NonNull String category, HashMap<String, Double> nutritionValues, 
       @NonNull Double value) {
