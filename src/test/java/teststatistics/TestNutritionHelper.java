@@ -87,5 +87,16 @@ public class TestNutritionHelper {
     assertEquals("Could not retrieve cateogry value", 
         15.0, testHelper.getValue("Example", testMap), 0.0);
   }
+  
+  /**
+   * Test to try and get a different value from the values map.
+   * It should return the different value.
+   */
+  @Test
+  public void testGetDifferentValue() {
+    testHelper.addValue("Example", testMap, 10.0);
+    assertEquals("Could not retrieve cateogry value", 
+        10.0, testHelper.getValue("Example", testMap), 0.0);
+  }
 
 }
