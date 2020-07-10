@@ -18,7 +18,7 @@ public class NutritionHelper {
    * @param value - The value for the category to be added.
    * @return
    */
-  public double addValue(@NonNull String category, HashMap<String, Double> nutritionValues, 
+  public Double addValue(@NonNull String category, HashMap<String, Double> nutritionValues, 
       @NonNull Double value) {
     //If either null, the total should be increased by 0
     if (category == null || value == null || value < 0.0) {
