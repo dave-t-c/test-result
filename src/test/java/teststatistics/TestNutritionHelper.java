@@ -76,5 +76,16 @@ public class TestNutritionHelper {
     assertTrue("Could not ignore negative nutrition value",
           testMap.get("Example") == null);
   }
+  
+  /**
+   * Test to try and get a value from the values map. 
+   * The map should return the total for that category.
+   */
+  @Test
+  public void testGetCategoryValue() {
+    testHelper.addValue("Example", testMap, 15.0);
+    assertEquals("Could not retrieve cateogry value", 
+        15.0, testHelper.getValue("Example", testMap), 0.0);
+  }
 
 }
