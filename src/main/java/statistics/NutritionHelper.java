@@ -21,7 +21,7 @@ public class NutritionHelper {
   public double addValue(@NonNull String category, HashMap<String, Double> nutritionValues, 
       @NonNull Double value) {
     //If either null, the total should be increased by 0
-    if (category == null || value == null) {
+    if (category == null || value == null || value < 0.0) {
       return 0.0;
     }
     //Get the current value, this will either be null if nothing has previously been added,
