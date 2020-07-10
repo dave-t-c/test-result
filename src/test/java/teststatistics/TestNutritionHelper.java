@@ -16,11 +16,13 @@ import org.junit.Test;
  */
 public class TestNutritionHelper {
 
-  NutritionHelper testHelper;  
+  NutritionHelper testHelper;
+  HashMap<String, Double> testMap;
 
   @Before
   public void setUp() throws Exception {
     testHelper = new NutritionHelper();
+    testMap = new HashMap<>();
   }
   
   /**
@@ -49,7 +51,6 @@ public class TestNutritionHelper {
    */
   @Test
   public void testAddtoHashMap() {
-    HashMap<String, Double> testMap = new HashMap<>();
     testHelper.addValue("Example", testMap, 15.0);
     assertEquals("Could not add to hash map", 15.0, testMap.get("Example"), 0.0);
   }
@@ -60,7 +61,6 @@ public class TestNutritionHelper {
    */
   @Test
   public void testAddDuplicateKey() {
-    HashMap<String, Double> testMap = new HashMap<>();
     testHelper.addValue("Example", testMap, 15.0);
     testHelper.addValue("Example", testMap, 10.0);
     assertEquals("Could not add duplicate to hash map", 25.0, testMap.get("Example"), 0.0);
@@ -72,7 +72,6 @@ public class TestNutritionHelper {
    */
   @Test
   public void testAddNegativeValue() {
-    HashMap<String, Double> testMap = new HashMap<>();
     testHelper.addValue("Example", testMap, -5.0);
     assertTrue("Could not ignore negative nutrition value",
           testMap.get("Example") == null);
