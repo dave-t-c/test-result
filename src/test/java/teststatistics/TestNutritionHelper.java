@@ -64,5 +64,17 @@ public class TestNutritionHelper {
     testHelper.addValue("Example", testMap, 10.0);
     assertEquals("Could not add duplicate to hash map", 25.0, testMap.get("Example"), 0.0);
   }
+  
+  /**
+   * Test to try and add a negative value. Negative values should not be added as 
+   * as far as I am aware negative values of nutrition don't exist.
+   */
+  @Test
+  public void testAddNegativeValue() {
+    HashMap<String, Double> testMap = new HashMap<>();
+    testHelper.addValue("Example", testMap, -5.0);
+    assertEquals("Could not ignore negative nutrition value",
+          0.0, testMap.get("Example"), 0.0);
+  }
 
 }
