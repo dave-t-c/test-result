@@ -2,6 +2,7 @@ package test.java.teststatistics;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 import main.java.statistics.NutritionHelper;
@@ -73,8 +74,8 @@ public class TestNutritionHelper {
   public void testAddNegativeValue() {
     HashMap<String, Double> testMap = new HashMap<>();
     testHelper.addValue("Example", testMap, -5.0);
-    assertEquals("Could not ignore negative nutrition value",
-          0.0, testMap.get("Example"), 0.0);
+    assertTrue("Could not ignore negative nutrition value",
+          testMap.get("Example") == null);
   }
 
 }
