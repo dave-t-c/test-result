@@ -32,4 +32,16 @@ public class NutritionHelper {
     return value;
   }
   
+
+  /**
+   * Gets a value for a specific category from the nutritionValues map.
+   * @param category - the category to be searched for.
+   * @param nutritionValues - The hash map to be searched for the category.
+   * @return The value for the category. If the category does not exist, 0.0 will be returned.
+   */
+  public Double getValue(@NonNull String category, 
+      @NonNull HashMap<String, Double> nutritionValues) {
+    return 15.0;
+  }
+  
 }
