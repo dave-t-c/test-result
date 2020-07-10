@@ -20,10 +20,15 @@ public class NutritionHelper {
    */
   public double addValue(@NonNull String category, HashMap<String, Double> nutritionValues, 
       @NonNull Double value) {
+    //If either null, the total should be increased by 0
     if (category == null || value == null) {
       return 0.0;
     }
-    nutritionValues.put(category, value);
+    //Get the current value, this will either be null if nothing has previously been added,
+    //so the current total is 0.0, or use the current total if it exists.
+    Double current = nutritionValues.get(category) == null ? 0.0 : nutritionValues.get(category);
+    nutritionValues.put(category, current + value);
+    //The total should be adjusted by the value.
     return value;
   }
   
