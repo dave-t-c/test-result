@@ -10,7 +10,7 @@ import org.junit.Test;
 
 
 /**
- * Class foor testing the NutritionHelper class.
+ * Class for testing the NutritionHelper class.
  * @author dave-t-c
  */
 public class TestNutritionHelper {
@@ -51,6 +51,18 @@ public class TestNutritionHelper {
     HashMap<String, Double> testMap = new HashMap<>();
     testHelper.addValue("Example", testMap, 15.0);
     assertEquals("Could not add to hash map", 15.0, testMap.get("Example"), 0.0);
+  }
+  
+  /**
+   * Test to try and add a second value for the same key.
+   * The value for the key should increase.
+   */
+  @Test
+  public void testAddDuplicateKey() {
+    HashMap<String, Double> testMap = new HashMap<>();
+    testHelper.addValue("Example", testMap, 15.0);
+    testHelper.addValue("Example", testMap, 10.0);
+    assertEquals("Could not add duplicate to hash map", 25.0, testMap.get("Example"), 0.0);
   }
 
 }
