@@ -98,5 +98,16 @@ public class TestNutritionHelper {
     assertEquals("Could not retrieve cateogry value", 
         10.0, testHelper.getValue("Example", testMap), 0.0);
   }
+  
+  /**
+   * Test to try and get a value for a different category.
+   * The value for the category should be returned, not that of another category.
+   */
+  @Test
+  public void testGetDifferentCategory() {
+    testHelper.addValue("Other", testMap, 10.5);
+    assertEquals("Could not retrieve different category", 
+        10.5, testHelper.getValue("Other", testMap), 0.0);
+  }
 
 }
