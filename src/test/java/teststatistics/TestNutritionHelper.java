@@ -109,5 +109,15 @@ public class TestNutritionHelper {
     assertEquals("Could not retrieve different category", 
         10.5, testHelper.getValue("Other", testMap), 0.0);
   }
+  
+  /**
+   * Test to try and get a value for a category that does not exist.
+   * The value returned should be 0.0.
+   */
+  @Test
+  public void testGetValueNoneExistentCategory() {
+    assertEquals("Could not get for non existant category", 
+        0.0, testHelper.getValue("Other", testMap), 0.0);
+  }
 
 }
