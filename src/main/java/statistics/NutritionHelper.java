@@ -41,6 +41,9 @@ public class NutritionHelper {
    */
   public Double getValue(@NonNull String category, 
       @NonNull HashMap<String, Double> nutritionValues) {
+    if (nutritionValues == null || category == null)  {
+      return 0.0;
+    }
     return nutritionValues.get(category) == null ? 0.0 : nutritionValues.get(category);
   }
   
