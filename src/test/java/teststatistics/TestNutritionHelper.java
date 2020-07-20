@@ -4,6 +4,7 @@ package test.java.teststatistics;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Collections;
 import java.util.HashMap;
 import main.java.statistics.NutritionHelper;
 import org.junit.Before;
@@ -127,7 +128,7 @@ public class TestNutritionHelper {
   @Test
   public void testGetSubcategoryNames() {
     assertEquals("Could not get subcategory names", 
-        "Example", testHelper.getSubcategoryNames(testMap));
+        Collections.emptySet(), testHelper.getSubcategoryNames(testMap));
   }
 
 }
