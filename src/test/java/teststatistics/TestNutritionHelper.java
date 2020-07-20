@@ -164,6 +164,15 @@ public class TestNutritionHelper {
     assertEquals("Could not remove different category", 15.0,
         testHelper.removeSubcategory("Example", testMap), 0.0);
   }
-
+  
+  /**
+   * Test to try and get the value for a category with a different name.
+   */
+  @Test
+  public void testRemoveDifferentSubcategoryName() {
+    testHelper.addValue("Other", testMap, 10.0);
+    assertEquals("Could not remove different subcategory", 10.0,
+        testHelper.removeSubcategory("Other", testMap), 0.0);
+  }
 
 }
