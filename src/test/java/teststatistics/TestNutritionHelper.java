@@ -130,5 +130,16 @@ public class TestNutritionHelper {
     assertEquals("Could not get subcategory names", 
         Collections.emptySet(), testHelper.getSubcategoryNames(testMap));
   }
+  
+  /**
+   * Test to try and add a single value to the testMap, then retrieve the category name from the
+   * sub-category name method.
+   */
+  @Test
+  public void testGetDifferentSubcategoryName() {
+    testHelper.addValue("Other", testMap, 10.5);
+    assertEquals("Could not get subcategory name for non empty map",
+        testMap.keySet(), testHelper.getSubcategoryNames(testMap));
+  }
 
 }
