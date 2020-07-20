@@ -119,5 +119,15 @@ public class TestNutritionHelper {
     assertEquals("Could not get for non existant category", 
         0.0, testHelper.getValue("Other", testMap), 0.0);
   }
+  
+  /**
+   * Test to try and get the names of the sub-category names
+   * from the NutritionHelper Object.
+   */
+  @Test
+  public void testGetSubcategoryNames() {
+    assertEquals("Could not get subcategory names", 
+        "Example", testHelper.getSubcategoryNames(testMap));
+  }
 
 }
