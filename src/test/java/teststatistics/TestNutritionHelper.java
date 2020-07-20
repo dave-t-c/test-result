@@ -148,10 +148,12 @@ public class TestNutritionHelper {
    * Test to try and remove a sub-category from the values map. 
    */
   @Test
-  public void removeSubcategory() {
+  public void testRemoveSubcategory() {
     testHelper.addValue("Example", testMap, 10.0);
     assertEquals("Could not remove category", 10.0, 
         testHelper.removeSubcategory("Example", testMap), 0.0);
   }
+  
+
 
 }
