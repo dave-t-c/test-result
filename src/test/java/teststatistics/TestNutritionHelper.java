@@ -174,5 +174,16 @@ public class TestNutritionHelper {
     assertEquals("Could not remove different subcategory", 10.0,
         testHelper.removeSubcategory("Other", testMap), 0.0);
   }
+  
+  /**
+   * Test to try and remove a non existent sub-category
+   * The value returned should be 0.0, as the category to be removed does not exist,
+   * so the total should not change.
+   */
+  @Test
+  public void testRemoveNonExistantCategory() {
+    assertEquals("Could not get correct total change", 0.0, 
+        testHelper.removeSubcategory("Other", testMap), 0.0);
+  }
 
 }
