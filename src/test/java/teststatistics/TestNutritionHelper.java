@@ -154,6 +154,16 @@ public class TestNutritionHelper {
         testHelper.removeSubcategory("Example", testMap), 0.0);
   }
   
+  /**
+   * Test to try and remove a different sub-category.
+   * The value to subtract should be different as the value added is different
+   */
+  @Test
+  public void testRemoveDifferentSubcategory() {
+    testHelper.addValue("Exmaple", testMap, 15.0);
+    assertEquals("Could not remove different category", 15.0,
+        testHelper.removeSubcategory("Example", testMap), 0.0);
+  }
 
 
 }
