@@ -1,5 +1,6 @@
 package main.java.statistics;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 import org.eclipse.jdt.annotation.NonNull;
@@ -54,6 +55,9 @@ public class NutritionHelper {
    * @return Set of sub-category names
    */
   public Set<String> getSubcategoryNames(@NonNull HashMap<String, Double> nutritionValues) {
+    if (nutritionValues == null)  {
+      return Collections.emptySet();
+    }
     return nutritionValues.keySet();
   }
   
