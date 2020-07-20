@@ -1,6 +1,5 @@
 package main.java.statistics;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 import org.eclipse.jdt.annotation.NonNull;
@@ -49,8 +48,13 @@ public class NutritionHelper {
     return nutritionValues.get(category) == null ? 0.0 : nutritionValues.get(category);
   }
   
+  /**
+   * Return the set of sub-category games for the nutritionalValues provided.
+   * @param nutritionValues - The Values to extract the sub-categories from 
+   * @return Set of sub-category names
+   */
   public Set<String> getSubcategoryNames(@NonNull HashMap<String, Double> nutritionValues) {
-    return Collections.emptySet();
+    return nutritionValues.keySet();
   }
   
 }
