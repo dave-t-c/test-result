@@ -160,7 +160,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testRemoveDifferentSubcategory() {
-    testHelper.addValue("Exmaple", testMap, 15.0);
+    testHelper.addValue("Example", testMap, 15.0);
     assertEquals("Could not remove different category", 15.0,
         testHelper.removeSubcategory("Example", testMap), 0.0);
   }
