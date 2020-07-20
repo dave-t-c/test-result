@@ -36,7 +36,7 @@ public class NutritionHelper {
   
   public Double removeSubcategory(@NonNull String category, 
       @NonNull HashMap<String, Double> nutritionValues) {
-    return 10.0;
+    return nutritionValues.get("Example");
   }
   
 
