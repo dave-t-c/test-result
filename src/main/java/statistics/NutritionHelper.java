@@ -34,6 +34,11 @@ public class NutritionHelper {
     return value;
   }
   
+  public Double removeSubcategory(@NonNull String category, 
+      @NonNull HashMap<String, Double> nutritionValues) {
+    return 10.0;
+  }
+  
 
   /**
    * Gets a value for a specific category from the nutritionValues map.
