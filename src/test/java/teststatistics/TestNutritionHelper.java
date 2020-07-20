@@ -138,8 +138,10 @@ public class TestNutritionHelper {
   @Test
   public void testGetDifferentSubcategoryName() {
     testHelper.addValue("Other", testMap, 10.5);
-    assertEquals("Could not get subcategory name for non empty map",
-        testMap.keySet(), testHelper.getSubcategoryNames(testMap));
+    assertTrue("Could not get subcategory name for non empty map",
+        testHelper.getSubcategoryNames(testMap).contains("Other"));
+    assertTrue("Could not get correct set size", 
+        testHelper.getSubcategoryNames(testMap).size() == 1);
   }
 
 }
