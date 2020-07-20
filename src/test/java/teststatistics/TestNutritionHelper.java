@@ -143,5 +143,15 @@ public class TestNutritionHelper {
     assertTrue("Could not get correct set size", 
         testHelper.getSubcategoryNames(testMap).size() == 1);
   }
+  
+  /**
+   * Test to try and remove a sub-category from the values map. 
+   */
+  @Test
+  public void removeSubcategory() {
+    testHelper.addValue("Example", testMap, 10.0);
+    assertEquals("Could not remove category", 10.0, 
+        testHelper.removeSubcategory("Example", testMap), 0.0);
+  }
 
 }
