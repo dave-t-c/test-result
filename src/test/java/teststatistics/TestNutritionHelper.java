@@ -185,5 +185,17 @@ public class TestNutritionHelper {
     assertEquals("Could not get correct total change", 0.0, 
         testHelper.removeSubcategory("Other", testMap), 0.0);
   }
+  
+  /**
+   * Test to check the size of the hash map key set decrease after
+   * an item is removed.
+   */
+  @Test
+  public void testCheckRemoveSize() {
+    testHelper.addValue("Other", testMap, 10.0);
+    testHelper.removeSubcategory("Other", testMap);
+    assertEquals("Could not change size of values map", 0,
+        testMap.keySet().size());
+  }
 
 }
