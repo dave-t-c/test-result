@@ -34,6 +34,12 @@ public class NutritionHelper {
     return value;
   }
   
+  /**
+   * Removes a sub-category from the nutrition values map. 
+   * @param category - the sub-category to be removed.
+   * @param nutritionValues - The value to remove the sub-category from 
+   * @return Double - the value to subtract from the total. 
+   */
   public Double removeSubcategory(@NonNull String category, 
       @NonNull HashMap<String, Double> nutritionValues) {
     return nutritionValues.get(category) == null ? 0.0 : nutritionValues.remove(category);
