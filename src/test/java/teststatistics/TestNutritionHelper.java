@@ -245,6 +245,15 @@ public class TestNutritionHelper {
   public void testNullObject() {
     assertFalse("Could not compare null object", testHelper.isEqual(testCarbs, null));
   }
+  
+  /**
+   * Test to try and compare a null NutritionType.
+   * Test should return false as they cannot be compared.
+   */
+  @Test
+  public void testNullNutritionType() {
+    assertFalse("Could not compare null nutrition type", testHelper.isEqual(null, otherCarbs));
+  }
 
 
 }
