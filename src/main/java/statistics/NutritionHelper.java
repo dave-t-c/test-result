@@ -75,6 +75,12 @@ public class NutritionHelper {
     return nutritionValues.keySet();
   }
   
+  /**
+   * Checks to see if a NutritionType and an Object are equal.
+   * @param type NutritionType to compare.
+   * @param obj Object to compare the NutritonType to
+   * @return If the two Objects are equal.
+   */
   public boolean isEqual(NutritionType type, Object obj) {
     NutritionType objType = (NutritionType) obj;
     return (type.getValues().equals(objType.getValues()));
