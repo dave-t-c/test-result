@@ -76,7 +76,8 @@ public class NutritionHelper {
   }
   
   public boolean isEqual(NutritionType type, Object obj) {
-    return true;
+    NutritionType objType = (NutritionType) obj;
+    return type.getValues().equals(objType.getValues());
   }
   
 }
