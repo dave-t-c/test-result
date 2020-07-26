@@ -237,6 +237,14 @@ public class TestNutritionHelper {
     otherCarbs.addValue("Other", 10.5);
     assertFalse("Could not get non equal Keys", testHelper.isEqual(testCarbs, otherCarbs));
   }
+  
+  /**
+   * Test to try and see if a null Object is equal to a carb nutrition object.
+   */
+  @Test
+  public void testNullObject() {
+    assertFalse("Could not compare null object", testHelper.isEqual(testCarbs, null));
+  }
 
 
 }
