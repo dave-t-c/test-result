@@ -75,4 +75,8 @@ public class NutritionHelper {
     return nutritionValues.keySet();
   }
   
+  public boolean isEqual(NutritionType type, Object obj) {
+    return true;
+  }
+  
 }
