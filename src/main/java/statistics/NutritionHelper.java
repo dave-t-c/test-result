@@ -82,13 +82,17 @@ public class NutritionHelper {
    * @return If the two Objects are equal.
    */
   public boolean isEqual(NutritionType type, Object obj) {
+    //Check to see if the objects are null before casting them.
     if (type == null || obj == null) {
       return false;
     }
+    //Declare a new nutrition type to try and cast to.
     NutritionType objType;
     try { 
+      //Try to cast the object.
       objType = (NutritionType) obj;
     } catch (ClassCastException ex) {
+      //Return false if it cannot be cast, as if they are not the same type they cannot be equal.
       return false;
     }
     return (type.getValues().equals(objType.getValues()));
