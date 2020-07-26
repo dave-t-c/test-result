@@ -21,11 +21,19 @@ public class TestNutritionHelper {
 
   NutritionHelper testHelper;
   HashMap<String, Double> testMap;
+  CarbNutrition testCarbs;
+  CarbNutrition otherCarbs;
 
+  /**
+   * Set up all of the variables for the tests before each test is run.
+   * @throws Exception - Thrown if the variables cannot be initialised.
+   */
   @Before
   public void setUp() throws Exception {
     testHelper = new NutritionHelper();
     testMap = new HashMap<>();
+    testCarbs = new CarbNutrition();
+    otherCarbs = new CarbNutrition();
   }
   
   /**
@@ -216,8 +224,6 @@ public class TestNutritionHelper {
    */
   @Test
   public void testDifferentTypesEqual() {
-    CarbNutrition testCarbs = new CarbNutrition();
-    CarbNutrition otherCarbs = new CarbNutrition();
     otherCarbs.addValue("Example", 10.5);
     assertFalse("Could not get non equal Types", testHelper.isEqual(testCarbs, otherCarbs));
   }
