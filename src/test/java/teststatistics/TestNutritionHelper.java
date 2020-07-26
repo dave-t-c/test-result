@@ -226,6 +226,17 @@ public class TestNutritionHelper {
     otherCarbs.addValue("Example", 10.5);
     assertFalse("Could not get non equal Types", testHelper.isEqual(testCarbs, otherCarbs));
   }
+  
+  /**
+   * Test to add two identical values with different names.
+   * The total will be the same, however, the keys will not be, so it should not be equal.
+   */
+  @Test
+  public void testDiffValueKeys() {
+    testCarbs.addValue("Example", 10.5);
+    otherCarbs.addValue("Other", 10.5);
+    assertFalse("Could not get non equal Keys", testHelper.isEqual(testCarbs, otherCarbs));
+  }
 
 
 }
