@@ -206,7 +206,9 @@ public class TestNutritionHelper {
   @Test
   public void testNutritionTypeEqual() {
     CarbNutrition testCarbs = new CarbNutrition();
-    testHelper.isEqual(testCarbs, testCarbs);
+    assertTrue("Could get equal items", testHelper.isEqual(testCarbs, testCarbs));
   }
+  
+
 
 }
