@@ -2,6 +2,7 @@ package test.java.teststatistics;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
@@ -209,6 +210,17 @@ public class TestNutritionHelper {
     assertTrue("Could get equal items", testHelper.isEqual(testCarbs, testCarbs));
   }
   
+  /**
+   * Test to try and see if two different instances of a NutritionType are equal.
+   * This test should return false 
+   */
+  @Test
+  public void testDifferentTypesEqual() {
+    CarbNutrition testCarbs = new CarbNutrition();
+    CarbNutrition otherCarbs = new CarbNutrition();
+    otherCarbs.addValue("Example", 10.5);
+    assertFalse("Could not get non equal Types", testHelper.isEqual(testCarbs, otherCarbs));
+  }
 
 
 }
