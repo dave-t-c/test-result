@@ -85,7 +85,12 @@ public class NutritionHelper {
     if (type == null || obj == null) {
       return false;
     }
-    NutritionType objType = (NutritionType) obj;
+    NutritionType objType;
+    try { 
+      objType = (NutritionType) obj;
+    } catch (ClassCastException ex) {
+      return false;
+    }
     return (type.getValues().equals(objType.getValues()));
   }
   
