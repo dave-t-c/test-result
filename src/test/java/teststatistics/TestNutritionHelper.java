@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import java.util.HashMap;
+import main.java.statistics.CarbNutrition;
 import main.java.statistics.NutritionHelper;
 import org.junit.Before;
 import org.junit.Test;
@@ -196,6 +197,16 @@ public class TestNutritionHelper {
     testHelper.removeSubcategory("Other", testMap);
     assertEquals("Could not change size of values map", 0,
         testMap.keySet().size());
+  }
+  
+  /**
+   * Test to try and see if a NutritionType is equal to an Object.
+   * This should return true as it is the same NutritionType
+   */
+  @Test
+  public void testNutritionTypeEqual() {
+    CarbNutrition testCarbs = new CarbNutrition();
+    testHelper.isEqual(testCarbs, testCarbs);
   }
 
 }
