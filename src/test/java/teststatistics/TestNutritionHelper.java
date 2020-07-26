@@ -254,6 +254,14 @@ public class TestNutritionHelper {
   public void testNullNutritionType() {
     assertFalse("Could not compare null nutrition type", testHelper.isEqual(null, otherCarbs));
   }
-
+  
+  /**
+   * Test to try and compare a different, non null type that cannot
+   * be converted to a NutritionType.
+   */
+  @Test 
+  public void testConvertDifferentType() {
+    assertFalse("Could not compare different types", testHelper.isEqual(testCarbs, "Hello"));
+  }
 
 }
