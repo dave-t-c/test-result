@@ -82,7 +82,7 @@ public class NutritionHelper {
    * @return If the two Objects are equal.
    */
   public boolean isEqual(NutritionType type, Object obj) {
-    if (obj == null) {
+    if (type == null || obj == null) {
       return false;
     }
     NutritionType objType = (NutritionType) obj;
