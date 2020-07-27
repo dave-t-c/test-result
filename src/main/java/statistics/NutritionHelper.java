@@ -95,6 +95,12 @@ public class NutritionHelper {
       //Return false if it cannot be cast, as if they are not the same type they cannot be equal.
       return false;
     }
+    
+    //Return false if the value maps are null.
+    if (type.getValues() == null || objType.getValues() == null) {
+      return false;
+    }
+    
     return (type.getValues().equals(objType.getValues()));
   }
   
