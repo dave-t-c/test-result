@@ -263,5 +263,14 @@ public class TestNutritionHelper {
   public void testConvertDifferentType() {
     assertFalse("Could not compare different types", testHelper.isEqual(testCarbs, "Hello"));
   }
+  
+  /**
+   * Test to try and get a String from a values map.
+   */
+  @Test
+  public void testGetStringForNutritionType() {
+    assertEquals("Could not get string for nutrition type", 
+        "Name: Carbs, Values: {}", testHelper.toString(testCarbs));
+  }
 
 }
