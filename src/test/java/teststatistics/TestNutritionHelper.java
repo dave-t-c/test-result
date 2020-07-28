@@ -214,7 +214,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testNutritionTypeEqual() {
-    assertTrue("Could get equal items", testHelper.isEqual(testCarbs, testCarbs));
+    assertTrue("Could get equal items", testHelper.getEqual(testCarbs, testCarbs));
   }
   
   /**
@@ -224,7 +224,7 @@ public class TestNutritionHelper {
   @Test
   public void testDifferentTypesEqual() {
     otherCarbs.addValue("Example", 10.5);
-    assertFalse("Could not get non equal Types", testHelper.isEqual(testCarbs, otherCarbs));
+    assertFalse("Could not get non equal Types", testHelper.getEqual(testCarbs, otherCarbs));
   }
   
   /**
@@ -235,7 +235,7 @@ public class TestNutritionHelper {
   public void testDiffValueKeys() {
     testCarbs.addValue("Example", 10.5);
     otherCarbs.addValue("Other", 10.5);
-    assertFalse("Could not get non equal Keys", testHelper.isEqual(testCarbs, otherCarbs));
+    assertFalse("Could not get non equal Keys", testHelper.getEqual(testCarbs, otherCarbs));
   }
   
   /**
@@ -243,7 +243,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testNullObject() {
-    assertFalse("Could not compare null object", testHelper.isEqual(testCarbs, null));
+    assertFalse("Could not compare null object", testHelper.getEqual(testCarbs, null));
   }
   
   /**
@@ -252,7 +252,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testNullNutritionType() {
-    assertFalse("Could not compare null nutrition type", testHelper.isEqual(null, otherCarbs));
+    assertFalse("Could not compare null nutrition type", testHelper.getEqual(null, otherCarbs));
   }
   
   /**
@@ -261,7 +261,7 @@ public class TestNutritionHelper {
    */
   @Test 
   public void testConvertDifferentType() {
-    assertFalse("Could not compare different types", testHelper.isEqual(testCarbs, "Hello"));
+    assertFalse("Could not compare different types", testHelper.getEqual(testCarbs, "Hello"));
   }
   
   /**
