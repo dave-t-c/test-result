@@ -280,7 +280,7 @@ public class TestNutritionHelper {
   public void testGetDifferentType() {
     MockNutritionType mockType = new MockNutritionType();
     assertEquals("Could not get different string for different type",
-        "Name: Other, Values: {}, Total: 0", testHelper.getString(mockType));
+        "Name: Other, Values: {}, Total: 0.0", testHelper.getString(mockType));
   }
 
 }
