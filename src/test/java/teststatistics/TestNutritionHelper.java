@@ -270,7 +270,7 @@ public class TestNutritionHelper {
   @Test
   public void testGetStringForNutritionType() {
     assertEquals("Could not get string for nutrition type", 
-        "Name: Carbs, Values: {}", testHelper.toString(testCarbs));
+        "Name: Carbs, Values: {}", testHelper.getString(testCarbs));
   }
 
 }
