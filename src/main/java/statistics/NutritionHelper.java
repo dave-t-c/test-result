@@ -104,4 +104,8 @@ public class NutritionHelper {
     return (type.getValues().equals(objType.getValues()));
   }
   
+  public String getString(NutritionType type) {
+    return "Name: Carbs, Values: {}, Total: 0";
+  }
+  
 }
