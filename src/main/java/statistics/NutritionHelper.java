@@ -81,7 +81,7 @@ public class NutritionHelper {
    * @param obj Object to compare the NutritonType to
    * @return If the two Objects are equal.
    */
-  public boolean isEqual(NutritionType type, Object obj) {
+  public boolean getEqual(NutritionType type, Object obj) {
     //Check to see if the objects are null before casting them.
     if (type == null || obj == null) {
       return false;
