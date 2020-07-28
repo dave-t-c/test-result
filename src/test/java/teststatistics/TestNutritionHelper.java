@@ -282,7 +282,16 @@ public class TestNutritionHelper {
         "Name: Other, Values: {}, Total: 0.0", testHelper.getString(otherNutrition));
   }
   
-
+  /**
+   * Test to try and get the values from a nutrition type string.
+   * The values should be in the format: Values: {key:value.}
+   */
+  @Test
+  public void testGetValueString() {
+    testNutrition.addValue("Example", 10.0);
+    assertEquals("Could not get correct value string",
+        "Name: Carbs, Values: {Example:10.0,}, Total: 10.0", testHelper.getString(testNutrition));
+  }
   
 
 }
