@@ -272,5 +272,15 @@ public class TestNutritionHelper {
     assertEquals("Could not get string for nutrition type", 
         "Name: Carbs, Values: {}, Total: 0", testHelper.getString(testCarbs));
   }
+  
+  /**
+   * Test to try and get a String for a different nutrition type.
+   */
+  @Test
+  public void testGetDifferentType() {
+    MockNutritionType mockType = new MockNutritionType();
+    assertEquals("Could not get different string for different type",
+        "Name: Other, Values: {}, Total: 0", testHelper.getString(mockType));
+  }
 
 }
