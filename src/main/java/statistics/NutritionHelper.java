@@ -105,7 +105,7 @@ public class NutritionHelper {
   }
   
   public String getString(NutritionType type) {
-    return "Name: Carbs, Values: {}, Total: 0";
+    return "Name: " + type.getName() + ", Values: {}, Total: 0";
   }
   
 }
