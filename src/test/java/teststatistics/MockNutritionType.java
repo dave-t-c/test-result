@@ -14,7 +14,7 @@ public class MockNutritionType implements NutritionType {
 
   @Override
   public String getName() {
-    return "Other";
+    return "Carbs";
   }
 
   @Override
