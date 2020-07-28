@@ -104,8 +104,20 @@ public class NutritionHelper {
     return (type.getValues().equals(objType.getValues()));
   }
   
+  /**
+   * Method for getting a readable string for a given Nutrition Type.
+   * @param type - NutritionType to create a String from.
+   * @return Readable String of a Nutrition Type.
+   */
   public String getString(NutritionType type) {
-    return "Name: " + type.getName() + ", Values: {}, Total: 0.0";
+    StringBuilder returnVal = new StringBuilder("Name: ");
+    returnVal.append(type.getName() + ", Values: {");
+    HashMap<String, Double> values = type.getValues();
+    for (String key : values.keySet()) {
+      returnVal.append(key + ":" + values.get(key) + ",");
+    }
+    returnVal.append("}, Total: " + type.getTotal());
+    return returnVal.toString();
   }
   
 }
