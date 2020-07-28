@@ -293,5 +293,15 @@ public class TestNutritionHelper {
         "Name: Carbs, Values: {Example:10.0,}, Total: 10.0", testHelper.getString(testNutrition));
   }
   
+  /**
+   * Test to try and get a hash code for a given NutritionType.
+   * If the items are identical, then they should have the same hash code.
+   */
+  @Test
+  public void testGetHashCode() {
+    assertTrue("Could not get equal hash code", 
+        testHelper.getHashCode(testNutrition) == testHelper.getHashCode(testNutrition));
+  }
+  
 
 }
