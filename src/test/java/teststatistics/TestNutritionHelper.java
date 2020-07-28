@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import java.util.HashMap;
-import main.java.statistics.CarbNutrition;
 import main.java.statistics.NutritionHelper;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,8 +20,8 @@ public class TestNutritionHelper {
 
   NutritionHelper testHelper;
   HashMap<String, Double> testMap;
-  CarbNutrition testCarbs;
-  CarbNutrition otherCarbs;
+  MockNutritionType testNutrition;
+  MockNutritionType otherNutrition;
 
   /**
    * Set up all of the variables for the tests before each test is run.
@@ -32,8 +31,8 @@ public class TestNutritionHelper {
   public void setUp() throws Exception {
     testHelper = new NutritionHelper();
     testMap = new HashMap<>();
-    testCarbs = new CarbNutrition();
-    otherCarbs = new CarbNutrition();
+    testNutrition = new MockNutritionType();
+    otherNutrition = new MockNutritionType();
   }
   
   /**
@@ -214,7 +213,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testNutritionTypeEqual() {
-    assertTrue("Could get equal items", testHelper.getEqual(testCarbs, testCarbs));
+    assertTrue("Could get equal items", testHelper.getEqual(testNutrition, testNutrition));
   }
   
   /**
@@ -223,8 +222,9 @@ public class TestNutritionHelper {
    */
   @Test
   public void testDifferentTypesEqual() {
-    otherCarbs.addValue("Example", 10.5);
-    assertFalse("Could not get non equal Types", testHelper.getEqual(testCarbs, otherCarbs));
+    otherNutrition.addValue("Example", 10.5);
+    assertFalse("Could not get non equal Types", 
+        testHelper.getEqual(testNutrition, otherNutrition));
   }
   
   /**
@@ -233,9 +233,9 @@ public class TestNutritionHelper {
    */
   @Test
   public void testDiffValueKeys() {
-    testCarbs.addValue("Example", 10.5);
-    otherCarbs.addValue("Other", 10.5);
-    assertFalse("Could not get non equal Keys", testHelper.getEqual(testCarbs, otherCarbs));
+    testNutrition.addValue("Example", 10.5);
+    otherNutrition.addValue("Other", 10.5);
+    assertFalse("Could not get non equal Keys", testHelper.getEqual(testNutrition, otherNutrition));
   }
   
   /**
@@ -243,7 +243,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testNullObject() {
-    assertFalse("Could not compare null object", testHelper.getEqual(testCarbs, null));
+    assertFalse("Could not compare null object", testHelper.getEqual(testNutrition, null));
   }
   
   /**
@@ -252,7 +252,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testNullNutritionType() {
-    assertFalse("Could not compare null nutrition type", testHelper.getEqual(null, otherCarbs));
+    assertFalse("Could not compare null nutrition type", testHelper.getEqual(null, otherNutrition));
   }
   
   /**
@@ -261,7 +261,7 @@ public class TestNutritionHelper {
    */
   @Test 
   public void testConvertDifferentType() {
-    assertFalse("Could not compare different types", testHelper.getEqual(testCarbs, "Hello"));
+    assertFalse("Could not compare different types", testHelper.getEqual(testNutrition, "Hello"));
   }
   
   /**
@@ -270,7 +270,7 @@ public class TestNutritionHelper {
   @Test
   public void testGetStringForNutritionType() {
     assertEquals("Could not get string for nutrition type", 
-        "Name: Carbs, Values: {}, Total: 0.0", testHelper.getString(testCarbs));
+        "Name: Carbs, Values: {}, Total: 0.0", testHelper.getString(testNutrition));
   }
   
   /**
@@ -278,7 +278,7 @@ public class TestNutritionHelper {
    */
   @Test
   public void testGetDifferentType() {
-    MockNutritionType mockType = new MockNutritionType();
+    MockNutritionDifferent mockType = new MockNutritionDifferent();
     assertEquals("Could not get different string for different type",
         "Name: Other, Values: {}, Total: 0.0", testHelper.getString(mockType));
   }
