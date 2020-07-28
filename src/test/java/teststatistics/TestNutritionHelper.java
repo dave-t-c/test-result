@@ -21,7 +21,7 @@ public class TestNutritionHelper {
   NutritionHelper testHelper;
   HashMap<String, Double> testMap;
   MockNutritionType testNutrition;
-  MockNutritionType otherNutrition;
+  MockNutritionDifferent otherNutrition;
 
   /**
    * Set up all of the variables for the tests before each test is run.
@@ -32,7 +32,7 @@ public class TestNutritionHelper {
     testHelper = new NutritionHelper();
     testMap = new HashMap<>();
     testNutrition = new MockNutritionType();
-    otherNutrition = new MockNutritionType();
+    otherNutrition = new MockNutritionDifferent();
   }
   
   /**
@@ -278,9 +278,11 @@ public class TestNutritionHelper {
    */
   @Test
   public void testGetDifferentType() {
-    MockNutritionDifferent mockType = new MockNutritionDifferent();
     assertEquals("Could not get different string for different type",
-        "Name: Other, Values: {}, Total: 0.0", testHelper.getString(mockType));
+        "Name: Other, Values: {}, Total: 0.0", testHelper.getString(otherNutrition));
   }
+  
+
+  
 
 }
