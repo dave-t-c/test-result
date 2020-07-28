@@ -10,10 +10,11 @@ import main.java.statistics.NutritionType;
  */
 public class MockNutritionType implements NutritionType {
   HashMap<String, Double> valuesMap = new HashMap<>();
+  Double total = 0.0;
 
   @Override
   public Double getTotal() {
-    return 0.0;
+    return total;
   }
 
   @Override
@@ -24,6 +25,7 @@ public class MockNutritionType implements NutritionType {
   @Override
   public void addValue(String name, Double value) {
     valuesMap.put(name, value);
+    total += value;
   }
 
   @Override
