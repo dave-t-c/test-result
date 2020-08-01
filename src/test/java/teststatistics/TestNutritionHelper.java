@@ -303,5 +303,15 @@ public class TestNutritionHelper {
         testHelper.getHashCode(testNutrition) == testHelper.getHashCode(testNutrition));
   }
   
+  /**
+   * Test to try and get a hash code for two different nutrition types.
+   * The hash code returned should not be the same value.
+   */
+  @Test
+  public void testGetDiffHashCode() {
+    assertTrue("Could not get different hash code",
+        testHelper.getHashCode(testNutrition) != testHelper.getHashCode(otherNutrition));
+  }
+  
 
 }
