@@ -119,5 +119,9 @@ public class NutritionHelper {
     returnVal.append("}, Total: " + type.getTotal());
     return returnVal.toString();
   }
+ 
+  public int getHashCode(NutritionType type) {
+    return 5;
+  }
   
 }
