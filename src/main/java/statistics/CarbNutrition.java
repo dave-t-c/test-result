@@ -12,6 +12,7 @@ public class CarbNutrition implements NutritionType {
 
   private Double total = 0.0;
   private HashMap<String, Double> categoryMap = new HashMap<>();
+  private NutritionHelper helper = new NutritionHelper();
 
   @Override
   public Double getTotal() {
@@ -25,24 +26,22 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    total += value;
-    categoryMap.put(name, value);
+    total += helper.addValue(name, categoryMap, value);
   }
 
   @Override
   public Set<String> getSubcategoryNames() {
-    return categoryMap.keySet();
+    return helper.getSubcategoryNames(categoryMap);
   }
   
   @Override
   public Double getSubcategoryValue(String name) {
-    return categoryMap.get(name) == null ? 0.0 : categoryMap.get(name);
+    return helper.getValue(name, categoryMap);
   }
   
   @Override
   public void removeSubcategory(String name) {
-    total -= categoryMap.containsKey(name) ? categoryMap.get(name) : 0.0;
-    categoryMap.remove(name);
+    total -= helper.removeSubcategory(name, categoryMap);
   }
 
   @Override
