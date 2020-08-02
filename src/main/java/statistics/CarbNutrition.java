@@ -12,6 +12,7 @@ public class CarbNutrition implements NutritionType {
 
   private Double total = 0.0;
   private HashMap<String, Double> categoryMap = new HashMap<>();
+  private NutritionHelper helper = new NutritionHelper();
 
   @Override
   public Double getTotal() {
@@ -25,7 +26,6 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    NutritionHelper helper = new NutritionHelper();
     total += helper.addValue(name, categoryMap, value);
   }
 
