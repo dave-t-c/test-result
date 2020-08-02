@@ -48,6 +48,10 @@ public class CarbNutrition implements NutritionType {
   public HashMap<String, Double> getValues() {
     return categoryMap;
   }
+  
+  public boolean isEqual(Object obj) {
+    return true;
+  }
 
   
 
