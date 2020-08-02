@@ -159,5 +159,14 @@ public class TestCarbs {
     testCarbs.removeSubcategory("Example");
     assertEquals("Can't keep total the same", 0.0, testCarbs.getTotal(), 0.0);
   }
+  
+  /**
+   * Add test to try and get if an object is equal to the carbs nutrition object.
+   */
+  @Test
+  public void testGetCarbsEqual() {
+    assertTrue("Could not get equal carbs nutrition", 
+        testCarbs.isEqual(testCarbs));
+  }
 
 }
