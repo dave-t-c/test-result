@@ -21,6 +21,7 @@ public class TestNutritionHelper {
   NutritionHelper testHelper;
   HashMap<String, Double> testMap;
   MockNutritionType testNutrition;
+  MockNutritionType duplicTestNutrition;
   MockNutritionDifferent otherNutrition;
 
   /**
@@ -32,6 +33,7 @@ public class TestNutritionHelper {
     testHelper = new NutritionHelper();
     testMap = new HashMap<>();
     testNutrition = new MockNutritionType();
+    duplicTestNutrition = new MockNutritionType();
     otherNutrition = new MockNutritionDifferent();
   }
   
@@ -311,6 +313,17 @@ public class TestNutritionHelper {
   public void testGetDiffHashCode() {
     assertTrue("Could not get different hash code",
         testHelper.getHashCode(testNutrition) != testHelper.getHashCode(otherNutrition));
+  }
+  
+  /**
+   * Test to try and get a different hash code for two nutrition types with the same name, 
+   * however, one has values stored in it.
+   */
+  @Test
+  public void testGetHashCodeDiffValues() {
+    testHelper.addValue("Example", duplicTestNutrition.getValues(), 5.0);
+    assertTrue("Could not get different hash code for different values",
+        testHelper.getHashCode(testNutrition) != testHelper.getHashCode(duplicTestNutrition));
   }
   
 
