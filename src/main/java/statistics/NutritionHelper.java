@@ -2,6 +2,7 @@ package main.java.statistics;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Set;
 import org.eclipse.jdt.annotation.NonNull;
 
@@ -121,7 +122,7 @@ public class NutritionHelper {
   }
  
   public int getHashCode(NutritionType type) {
-    return 5;
+    return Objects.hash(type.getName());
   }
   
 }
