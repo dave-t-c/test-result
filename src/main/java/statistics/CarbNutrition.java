@@ -25,8 +25,8 @@ public class CarbNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    total += value;
-    categoryMap.put(name, value);
+    NutritionHelper helper = new NutritionHelper();
+    total += helper.addValue(name, categoryMap, value);
   }
 
   @Override
