@@ -122,7 +122,7 @@ public class NutritionHelper {
   }
  
   public int getHashCode(NutritionType type) {
-    return Objects.hash(type.getName());
+    return Objects.hash(type.getName(), type.getValues());
   }
   
 }
