@@ -121,6 +121,11 @@ public class NutritionHelper {
     return returnVal.toString();
   }
  
+  /**
+   * Calculate a hash code for a given NutritionType.
+   * @param type - NutritionType to calculate the hash code for.
+   * @return hash code value for the given NutritionType
+   */
   public int getHashCode(NutritionType type) {
     return Objects.hash(type.getName(), type.getValues());
   }
