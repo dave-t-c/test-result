@@ -8,7 +8,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Collections;
 import java.util.HashMap;
 import main.java.statistics.NutritionHelper;
-import main.java.statistics.NutritionType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -325,18 +324,6 @@ public class TestNutritionHelper {
     testHelper.addValue("Example", duplicTestNutrition.getValues(), 5.0);
     assertTrue("Could not get different hash code for different values",
         testHelper.getHashCode(testNutrition) != testHelper.getHashCode(duplicTestNutrition));
-  }
-  
-  /**
-   * Test to try and get a clone of a nutrition type. 
-   * The clone should have the same name as the nutrition type that has been cloned.
-   */
-  @Test
-  public void testGetTypeClone() {
-    NutritionType clonedType = testHelper.getClone(testNutrition);
-    assertEquals("Could not get correct name from clone", 
-        testNutrition.getName(), clonedType.getName());
-  }
-  
+  }  
 
 }
