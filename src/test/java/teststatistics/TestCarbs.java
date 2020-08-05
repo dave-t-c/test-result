@@ -204,5 +204,14 @@ public class TestCarbs {
     assertEquals("Could not get string for carbs with an item",
         "Name: Carbs, Values: {Example:10.0,}, Total: 10.0", testCarbs.toString());
   }
+  
+  /**
+   * Test to try and get a hash code from a Carbs Nutriton object.
+   * The hash code returned should be equal as the objects are both empty.
+   */
+  @Test
+  public void testGetHashCode() {
+    assertTrue("Could not get equal hash code", testCarbs.hashCode() == diffCarbs.hashCode());
+  }
 
 }
