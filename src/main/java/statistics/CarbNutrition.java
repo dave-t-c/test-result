@@ -60,7 +60,7 @@ public class CarbNutrition implements NutritionType {
   
   @Override 
   public int hashCode() {
-    return 5;
+    return helper.getHashCode(this);
   }
   
 
