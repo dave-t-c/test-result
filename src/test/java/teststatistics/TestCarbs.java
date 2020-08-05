@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import main.java.statistics.CarbNutrition;
@@ -16,10 +17,12 @@ public class TestCarbs {
 
   //Variables required for the tests.
   private CarbNutrition testCarbs;
+  private CarbNutrition diffCarbs;
   
   @Before
   public void setUp() throws Exception {
     testCarbs = new CarbNutrition();
+    diffCarbs = new CarbNutrition();
   }
 
   /**
@@ -167,6 +170,17 @@ public class TestCarbs {
   public void testGetCarbsEqual() {
     assertTrue("Could not get equal carbs nutrition", 
         testCarbs.isEqual(testCarbs));
+  }
+  
+  /**
+   * Add test to try and get if a different carbs nutrition object is equal
+   * to the carbs nutrition.
+   */
+  @Test
+  public void testGetDiffCarbsEqual() {
+    diffCarbs.addValue("Example", 10.0);
+    assertFalse("Could not get diff carbs to be unequal",
+        testCarbs.isEqual(diffCarbs));
   }
 
 }
