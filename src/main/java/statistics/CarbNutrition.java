@@ -50,7 +50,7 @@ public class CarbNutrition implements NutritionType {
   }
   
   public boolean isEqual(Object obj) {
-    return true;
+    return helper.getEqual(this, obj);
   }
 
   
