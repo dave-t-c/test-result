@@ -182,5 +182,16 @@ public class TestCarbs {
     assertFalse("Could not get diff carbs to be unequal",
         testCarbs.isEqual(diffCarbs));
   }
+  
+  /**
+   * Test to try and get a string from an empty carbs object.
+   * Should return:
+   * "Name: Carbs, Values: {}, Total: 0.0"
+   */
+  @Test
+  public void testGetCarbsString() {
+    assertEquals("Could not get correct string from carbs", 
+        "Name: Carbs, Values: {}, Total: 0.0", testCarbs.toString());
+  }
 
 }
