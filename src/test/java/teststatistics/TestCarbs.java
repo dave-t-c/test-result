@@ -213,5 +213,14 @@ public class TestCarbs {
   public void testGetHashCode() {
     assertTrue("Could not get equal hash code", testCarbs.hashCode() == diffCarbs.hashCode());
   }
+  
+  /**
+   * Test to try and get different hash codes for a carbs object that has had an item added.
+   */
+  @Test
+  public void testGetDiffHashCode() {
+    testCarbs.addValue("Example", 10.0);
+    assertTrue("Could not get different hashcode", testCarbs.hashCode() != diffCarbs.hashCode());
+  }
 
 }
