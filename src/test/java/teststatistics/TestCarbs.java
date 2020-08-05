@@ -193,5 +193,16 @@ public class TestCarbs {
     assertEquals("Could not get correct string from carbs", 
         "Name: Carbs, Values: {}, Total: 0.0", testCarbs.toString());
   }
+  
+  /**
+   * Test to try and get a formatted string from a Carb Nutrition object
+   * that has an item.
+   */
+  @Test
+  public void testGetStringWithItem() {
+    testCarbs.addValue("Example", 10.0);
+    assertEquals("Could not get string for carbs with an item",
+        "Name: Carbs, Values: {Example:10.0,}, Total: 10.0", testCarbs.toString());
+  }
 
 }
