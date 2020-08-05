@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import main.java.statistics.CarbNutrition;
@@ -16,10 +17,12 @@ public class TestCarbs {
 
   //Variables required for the tests.
   private CarbNutrition testCarbs;
+  private CarbNutrition diffCarbs;
   
   @Before
   public void setUp() throws Exception {
     testCarbs = new CarbNutrition();
+    diffCarbs = new CarbNutrition();
   }
 
   /**
@@ -158,6 +161,66 @@ public class TestCarbs {
   public void testDecreaseTotalNotExist() {
     testCarbs.removeSubcategory("Example");
     assertEquals("Can't keep total the same", 0.0, testCarbs.getTotal(), 0.0);
+  }
+  
+  /**
+   * Add test to try and get if an object is equal to the carbs nutrition object.
+   */
+  @Test
+  public void testGetCarbsEqual() {
+    assertTrue("Could not get equal carbs nutrition", 
+        testCarbs.isEqual(testCarbs));
+  }
+  
+  /**
+   * Add test to try and get if a different carbs nutrition object is equal
+   * to the carbs nutrition.
+   */
+  @Test
+  public void testGetDiffCarbsEqual() {
+    diffCarbs.addValue("Example", 10.0);
+    assertFalse("Could not get diff carbs to be unequal",
+        testCarbs.isEqual(diffCarbs));
+  }
+  
+  /**
+   * Test to try and get a string from an empty carbs object.
+   * Should return:
+   * "Name: Carbs, Values: {}, Total: 0.0"
+   */
+  @Test
+  public void testGetCarbsString() {
+    assertEquals("Could not get correct string from carbs", 
+        "Name: Carbs, Values: {}, Total: 0.0", testCarbs.toString());
+  }
+  
+  /**
+   * Test to try and get a formatted string from a Carb Nutrition object
+   * that has an item.
+   */
+  @Test
+  public void testGetStringWithItem() {
+    testCarbs.addValue("Example", 10.0);
+    assertEquals("Could not get string for carbs with an item",
+        "Name: Carbs, Values: {Example:10.0,}, Total: 10.0", testCarbs.toString());
+  }
+  
+  /**
+   * Test to try and get a hash code from a Carbs Nutriton object.
+   * The hash code returned should be equal as the objects are both empty.
+   */
+  @Test
+  public void testGetHashCode() {
+    assertTrue("Could not get equal hash code", testCarbs.hashCode() == diffCarbs.hashCode());
+  }
+  
+  /**
+   * Test to try and get different hash codes for a carbs object that has had an item added.
+   */
+  @Test
+  public void testGetDiffHashCode() {
+    testCarbs.addValue("Example", 10.0);
+    assertTrue("Could not get different hashcode", testCarbs.hashCode() != diffCarbs.hashCode());
   }
 
 }
