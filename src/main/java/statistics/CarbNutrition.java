@@ -53,6 +53,10 @@ public class CarbNutrition implements NutritionType {
     return helper.getEqual(this, obj);
   }
 
+  @Override
+  public String toString() {
+    return "Name: Carbs, Values: {}, Total: 0.0";
+  }
   
 
 }
