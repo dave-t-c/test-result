@@ -68,6 +68,10 @@ public class FatNutrition implements NutritionType {
     total -= helper.removeSubcategory(name, values);
   }
 
+  /**
+   * Return the values hash map for the FatNutrition object.
+   * @return Values map for FatNutrition
+   */
   @Override
   public HashMap<String, Double> getValues() {
     return values;
