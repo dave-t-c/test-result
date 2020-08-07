@@ -33,5 +33,15 @@ public class TestFatNutrition {
     assertEquals("Could not add item to fat nutrition",
         3.5, testFat.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and get the name of the NutritionType.
+   * This should return "Fat"
+   */
+  @Test
+  public void testGetNutritionName() {
+    FatNutrition testFat = new FatNutrition();
+    assertEquals("Could not get correct name", "Fat", testFat.getName());
+  }
 
 }
