@@ -43,5 +43,17 @@ public class TestFatNutrition {
     FatNutrition testFat = new FatNutrition();
     assertEquals("Could not get correct name", "Fat", testFat.getName());
   }
+  
+  /**
+   * Test to try and add a null string to FatNutrition Class.
+   * The total should be 0.
+   */
+  @Test
+  public void testAddNullValues() {
+    FatNutrition testFat = new FatNutrition();
+    testFat.addValue(null, null);
+    assertEquals("Could not handle null value", 
+        0.0, testFat.getTotal(), 0.0);
+  }
 
 }
