@@ -155,5 +155,16 @@ public class TestFatNutrition {
     assertEquals("Could not get formatted String",
         "Name: Fat, Values: {}, Total: 0.0", testFat.toString());
   }
+  
+  /**
+   * Test to try and get a different string from the FatNutrition Object.
+   * The returned string should contain the added items.
+   */
+  @Test
+  public void testGetNonEmptyString() {
+    testFat.addValue("Example", 10.0);
+    assertEquals("Could not get formatted String for non-empty FatNutrition",
+        "Name: Fat, Values: {Example:10.0,}, Total: 0.0", testFat.toString());
+  }
 
 }
