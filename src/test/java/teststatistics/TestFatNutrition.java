@@ -21,5 +21,17 @@ public class TestFatNutrition {
     assertEquals("Could not get new fat nutrition total",
         0.0, testFat.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and add a value to the FatNutrition class and return the
+   * new total.
+   */
+  @Test
+  public void testAddValue() {
+    FatNutrition testFat = new FatNutrition();
+    testFat.addValue("Example", 3.5);
+    assertEquals("Could not add item to fat nutrition",
+        3.5, testFat.getTotal(), 0.0);
+  }
 
 }
