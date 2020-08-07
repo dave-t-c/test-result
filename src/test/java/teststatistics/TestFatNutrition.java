@@ -2,6 +2,7 @@ package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Collections;
 import main.java.statistics.FatNutrition;
 import org.junit.Test;
 
@@ -54,6 +55,17 @@ public class TestFatNutrition {
     testFat.addValue(null, null);
     assertEquals("Could not handle null value", 
         0.0, testFat.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and get the sub-categories from the Fat Nutrition class.
+   * With none added, it should be an empty set. 
+   */
+  @Test
+  public void testGetSubcategory() {
+    FatNutrition testFat = new FatNutrition();
+    assertEquals("Could not get empty subcategories",
+        Collections.emptySet(), testFat.getSubcategoryNames());
   }
 
 }
