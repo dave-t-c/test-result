@@ -1,5 +1,8 @@
 package test.java.teststatistics;
 
+import static org.junit.Assert.assertEquals;
+
+import main.java.statistics.FatNutrition;
 import org.junit.Test;
 
 /**
@@ -16,7 +19,7 @@ public class TestFatNutrition {
   public void testGetTotal() {
     FatNutrition testFat = new FatNutrition();
     assertEquals("Could not get new fat nutrition total",
-        0.0, testFat.getTotal());
+        0.0, testFat.getTotal(), 0.0);
   }
 
 }
