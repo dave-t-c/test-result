@@ -113,5 +113,16 @@ public class TestFatNutrition {
     assertEquals("Could not remove sub-category", 
         0.0, testFat.getTotal(), 0.0);    
   }
+  
+  /**
+   * Test to try and remove a sub-category that doesn't exist.
+   * This should mean that the total is 0.0, as it should not have changed.
+   */
+  @Test
+  public void testRemoveSubcategoryNotExist() {
+    testFat.removeSubcategory("Example");
+    assertEquals("Could not remvoe non-existing sub-category",
+        0.0, testFat.getTotal(), 0.0);
+  }
 
 }
