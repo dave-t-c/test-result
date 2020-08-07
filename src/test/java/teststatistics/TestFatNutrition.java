@@ -81,5 +81,15 @@ public class TestFatNutrition {
     assertTrue("Could not return correct subcategory set",
         testFat.getSubcategoryNames().contains("Example"));
   }
+  
+  /**
+   * Test to try and get the sub category value for a category that has 
+   * not been added.
+   */
+  @Test
+  public void testGetSubcategoryValue() {
+    assertEquals("Could not get subcategory value",
+        0.0, testFat.getSubcategoryValue("Example"), 0.0);
+  }
 
 }
