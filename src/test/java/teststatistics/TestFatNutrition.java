@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import main.java.statistics.FatNutrition;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -12,6 +13,13 @@ import org.junit.Test;
  * @author dave-t-c
  */
 public class TestFatNutrition {
+  
+  private FatNutrition testFat;
+  
+  @Before
+  public void setUp() throws Exception {
+    testFat = new FatNutrition();
+  }
 
   /**
   * Test to try and create a new instance of the fat nutrition
@@ -19,7 +27,6 @@ public class TestFatNutrition {
   */
   @Test
   public void testGetTotal() {
-    FatNutrition testFat = new FatNutrition();
     assertEquals("Could not get new fat nutrition total",
         0.0, testFat.getTotal(), 0.0);
   }
@@ -30,7 +37,6 @@ public class TestFatNutrition {
    */
   @Test
   public void testAddValue() {
-    FatNutrition testFat = new FatNutrition();
     testFat.addValue("Example", 3.5);
     assertEquals("Could not add item to fat nutrition",
         3.5, testFat.getTotal(), 0.0);
@@ -42,7 +48,6 @@ public class TestFatNutrition {
    */
   @Test
   public void testGetNutritionName() {
-    FatNutrition testFat = new FatNutrition();
     assertEquals("Could not get correct name", "Fat", testFat.getName());
   }
   
@@ -52,7 +57,6 @@ public class TestFatNutrition {
    */
   @Test
   public void testAddNullValues() {
-    FatNutrition testFat = new FatNutrition();
     testFat.addValue(null, null);
     assertEquals("Could not handle null value", 
         0.0, testFat.getTotal(), 0.0);
@@ -64,7 +68,6 @@ public class TestFatNutrition {
    */
   @Test
   public void testGetSubcategory() {
-    FatNutrition testFat = new FatNutrition();
     assertEquals("Could not get empty subcategories",
         Collections.emptySet(), testFat.getSubcategoryNames());
   }
@@ -74,7 +77,6 @@ public class TestFatNutrition {
    */
   @Test
   public void testGetSubcategoryItems() {
-    FatNutrition testFat = new FatNutrition();
     testFat.addValue("Example", 10.0);
     assertTrue("Could not return correct subcategory set",
         testFat.getSubcategoryNames().contains("Example"));
