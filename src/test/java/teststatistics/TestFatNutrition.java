@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import main.java.statistics.FatNutrition;
@@ -66,6 +67,17 @@ public class TestFatNutrition {
     FatNutrition testFat = new FatNutrition();
     assertEquals("Could not get empty subcategories",
         Collections.emptySet(), testFat.getSubcategoryNames());
+  }
+  
+  /**
+   * Test to try and get the sub-categories when items have been added. 
+   */
+  @Test
+  public void testGetSubcategoryItems() {
+    FatNutrition testFat = new FatNutrition();
+    testFat.addValue("Example", 10.0);
+    assertTrue("Could not return correct subcategory set",
+        testFat.getSubcategoryNames().contains("Example"));
   }
 
 }
