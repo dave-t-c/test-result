@@ -101,5 +101,17 @@ public class TestFatNutrition {
     assertEquals("Could not get value for added category", 
         10.0, testFat.getSubcategoryValue("Example"), 0.0);
   }
+  
+  /**
+   * Test to remove a sub-category from the values map.
+   * The total value should be 0.
+   */
+  @Test
+  public void testRemoveSubcategory() {
+    testFat.addValue("Example", 10.0);
+    testFat.removeSubcategory("Example");
+    assertEquals("Could not remove sub-category", 
+        0.0, testFat.getTotal(), 0.0);    
+  }
 
 }
