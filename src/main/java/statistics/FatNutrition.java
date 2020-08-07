@@ -50,6 +50,10 @@ public class FatNutrition implements NutritionType {
     return helper.getSubcategoryNames(values);
   }
 
+  /**
+   * Get the value for a given sub-category.
+   * @return value for the given sub-category
+   */
   @Override
   public Double getSubcategoryValue(String name) {
     return helper.getValue(name, values);
