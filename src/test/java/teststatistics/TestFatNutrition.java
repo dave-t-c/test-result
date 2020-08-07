@@ -146,5 +146,14 @@ public class TestFatNutrition {
     assertTrue("Could not get values map with items",
         testFat.getValues().containsKey("Example"));
   }
+  
+  /**
+   * Test to try and get a formatted String from FatNutrition.
+   */
+  @Test
+  public void testGetStringEmpty() {
+    assertEquals("Could not get formatted String",
+        "Name: Fat, Values: {}, Total: 0.0", testFat.toString());
+  }
 
 }
