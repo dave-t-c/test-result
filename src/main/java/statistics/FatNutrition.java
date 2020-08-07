@@ -59,9 +59,13 @@ public class FatNutrition implements NutritionType {
     return helper.getValue(name, values);
   }
 
+  /**
+   * Remove a given sub-category from the values map.
+   * The total will be decreased if it can be removed.
+   */
   @Override
   public void removeSubcategory(String name) {
-    total -= values.remove(name);
+    total -= helper.removeSubcategory(name, values);
   }
 
   @Override
