@@ -135,5 +135,16 @@ public class TestFatNutrition {
     assertEquals("Could not get the values map",
         new HashMap<String, Double>(), testFat.getValues());
   }
+  
+  /**
+   * Test to try and get the values map for a FatNutrition
+   * object. This should contain the key for the item added.
+   */
+  @Test
+  public void testGetValuesMapNonEmpty() {
+    testFat.addValue("Example", 10.0);
+    assertTrue("Could not get values map with items",
+        testFat.getValues().containsKey("Example"));
+  }
 
 }
