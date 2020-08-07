@@ -14,8 +14,7 @@ public class FatNutrition implements NutritionType {
 
   @Override
   public String getName() {
-    // TODO Auto-generated method stub
-    return null;
+    return "Fat";
   }
 
   @Override
