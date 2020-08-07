@@ -6,6 +6,8 @@ import java.util.Set;
 public class FatNutrition implements NutritionType {
 
   Double total = 0.0;
+  NutritionHelper helper = new NutritionHelper();
+  HashMap<String, Double> values = new HashMap<>();
   
   @Override
   public Double getTotal() {
@@ -19,8 +21,7 @@ public class FatNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    total += value;
-
+    total += helper.addValue(name, values, value);
   }
 
   @Override
