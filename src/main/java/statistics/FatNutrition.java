@@ -1,6 +1,5 @@
 package main.java.statistics;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -27,7 +26,7 @@ public class FatNutrition implements NutritionType {
 
   @Override
   public Set<String> getSubcategoryNames() {
-    return Collections.emptySet();
+    return helper.getSubcategoryNames(values);
   }
 
   @Override
