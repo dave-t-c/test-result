@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
+import java.util.HashMap;
 import main.java.statistics.FatNutrition;
 import org.junit.Before;
 import org.junit.Test;
@@ -123,6 +124,16 @@ public class TestFatNutrition {
     testFat.removeSubcategory("Example");
     assertEquals("Could not remvoe non-existing sub-category",
         0.0, testFat.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and get the values map from a given FatNutrition.
+   * The size of the map should be 0 as no items have been added.
+   */
+  @Test
+  public void testGetValuesMapEmpty() {
+    assertEquals("Could not get the values map",
+        new HashMap<String, Double>(), testFat.getValues());
   }
 
 }
