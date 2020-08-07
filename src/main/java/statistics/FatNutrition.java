@@ -76,5 +76,10 @@ public class FatNutrition implements NutritionType {
   public HashMap<String, Double> getValues() {
     return values;
   }
+  
+  @Override
+  public String toString() {
+    return "Name: Fat, Values: {}, Total: 0.0";
+  }
 
 }
