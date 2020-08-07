@@ -91,5 +91,15 @@ public class TestFatNutrition {
     assertEquals("Could not get subcategory value",
         0.0, testFat.getSubcategoryValue("Example"), 0.0);
   }
+  
+  /**
+   * Test to get a sub-category value for a value that has been added. 
+   */
+  @Test
+  public void testGetSubcategoryValueAdded() {
+    testFat.addValue("Example", 10.0);
+    assertEquals("Could not get value for added category", 
+        10.0, testFat.getSubcategoryValue("Example"), 0.0);
+  }
 
 }
