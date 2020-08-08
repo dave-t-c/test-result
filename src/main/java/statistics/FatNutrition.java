@@ -79,7 +79,7 @@ public class FatNutrition implements NutritionType {
   
   @Override
   public String toString() {
-    return "Name: Fat, Values: {}, Total: 0.0";
+    return helper.getString(this);
   }
 
 }
