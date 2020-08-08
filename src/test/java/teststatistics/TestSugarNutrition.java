@@ -207,5 +207,15 @@ public class TestSugarNutrition {
     assertTrue("Could not get equal hash code for equal SugarNutritions",
         testSugar.hashCode() == otherSugar.hashCode());
   }
+  
+  /**
+   * Test to try and get a different hash code for different SugarNutritions.
+   */
+  @Test
+  public void testGetDiffHashCode() {
+    testSugar.addValue("Example", 5.0);
+    assertFalse("Could not get diff hashCode for diff SugarNutritions",
+        testSugar.hashCode() == otherSugar.hashCode());
+  }
 
 }
