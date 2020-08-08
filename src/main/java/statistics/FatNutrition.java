@@ -35,6 +35,8 @@ public class FatNutrition implements NutritionType {
    * Adds a value to the values map.
    * The total for the NutritionType is increased
    * if it can be added successfully. 
+   * @param name - name of the sub-category to add.
+   * @param value - value for the sub-category.
    */
   @Override
   public void addValue(String name, Double value) {
@@ -52,6 +54,7 @@ public class FatNutrition implements NutritionType {
 
   /**
    * Get the value for a given sub-category.
+   * @param name - Sub-category to be remnoved.
    * @return value for the given sub-category
    */
   @Override
@@ -62,6 +65,7 @@ public class FatNutrition implements NutritionType {
   /**
    * Remove a given sub-category from the values map.
    * The total will be decreased if it can be removed.
+   * @param name - Sub-category to be removed.
    */
   @Override
   public void removeSubcategory(String name) {
@@ -77,6 +81,10 @@ public class FatNutrition implements NutritionType {
     return values;
   }
   
+  /**
+   * Returns a formatted String for the FatNutrition instance.
+   * @return - Formatted String containing name, values and total.
+   */
   @Override
   public String toString() {
     return helper.getString(this);
