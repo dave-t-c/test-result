@@ -188,4 +188,15 @@ public class TestProteinNutrition {
         testProtein.equals(otherProtein));  
   }
   
+  /**
+   * Test to try and get a formatted string from the ProteinNutrtition Object.
+   * This should be in the format:
+   * "Name: Protein, Values: {}, Total: 0.0"
+   */
+  @Test
+  public void testGetFormattedStringEmpty() {
+    assertEquals("Could not get formatted String for empty ProteinNutrition",
+        "Name: Protein, Values: {}, Total: 0.0", testProtein.toString());
+  }
+  
 }
