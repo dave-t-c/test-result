@@ -2,11 +2,13 @@ package main.java.statistics;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 public class SugarNutrition implements NutritionType {
 
   private Double total = 0.0;
+  private Set<String> addedCategories = new HashSet<>();
   
   @Override
   public Double getTotal() {
@@ -21,11 +23,12 @@ public class SugarNutrition implements NutritionType {
   @Override
   public void addValue(String name, Double value) {
     total += value;
+    addedCategories.add(name);
   }
 
   @Override
   public Set<String> getSubcategoryNames() {
-    return Collections.emptySet();
+    return addedCategories;
   }
 
   @Override
