@@ -83,4 +83,15 @@ public class TestProteinNutrition {
     assertTrue("Could not get non-empty subcategory",
         testProtein.getSubcategoryNames().contains("Example"));
   }
+  
+  /**
+   * Test to try and get a sub-category value for a category that has not been added.
+   * This should return 0.0 as it does not exist.
+   */
+  @Test
+  public void testGetSubcategoryValue() {
+    assertEquals("Could not get non existant sub-category value",
+        0.0, testProtein.getSubcategoryValue("Other"), 0.0);
+  }
+  
 }
