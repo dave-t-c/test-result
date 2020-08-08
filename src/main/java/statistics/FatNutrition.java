@@ -103,7 +103,7 @@ public class FatNutrition implements NutritionType {
   
   @Override 
   public int hashCode() {
-    return 5;
+    return helper.getHashCode(this);
   }
 
 }
