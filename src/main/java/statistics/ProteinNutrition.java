@@ -31,7 +31,7 @@ public class ProteinNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    total += value;
+    total += name == null || value == null ? 0.0 : value;
   }
 
   @Override
