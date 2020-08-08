@@ -183,5 +183,16 @@ public class TestSugarNutrition {
     assertEquals("Could not get formmatted String from empty SugarNutrition",
         "Name: Sugar, Values: {}, Total: 0.0", testSugar.toString());
   }
+  
+  /**
+   * Test to try and get a string with values in from SugarNutrition.
+   * The string should contain the added items.
+   */
+  @Test
+  public void testGetFormattedStringNoneEmpty() {
+    testSugar.addValue("Example", 5.0);
+    assertEquals("Could not get formatted String with non-empty SugarNutrition",
+        "Name: Sugar, Values: {Example:5.0,}, Total: 0.0", testSugar.toString());
+  }
 
 }
