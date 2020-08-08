@@ -63,7 +63,7 @@ public class SugarNutrition implements NutritionType {
 
   @Override
   public void removeSubcategory(String name) {
-    values.remove("Example");
+    values.remove(name);
   }
 
   @Override
