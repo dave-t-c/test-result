@@ -20,10 +20,13 @@ public class ProteinNutrition implements NutritionType {
     return total;
   }
 
+  /**
+   * Gets the name of the ProteinNutrition.
+   * @return - String - 'Protein'
+   */
   @Override
   public String getName() {
-    // TODO Auto-generated method stub
-    return null;
+    return "Protein";
   }
 
   @Override
