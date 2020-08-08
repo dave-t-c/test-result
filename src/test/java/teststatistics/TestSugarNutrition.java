@@ -217,5 +217,15 @@ public class TestSugarNutrition {
     assertFalse("Could not get diff hashCode for diff SugarNutritions",
         testSugar.hashCode() == otherSugar.hashCode());
   }
+  
+  /**
+   * Test to try and see if two SugarNutrition Objects are equal.
+   * This should return true as they are both empty and have the same name.
+   */
+  @Test
+  public void testGetEqualSugarNutrition() {
+    assertTrue("Could not get equal SugarNutritions",
+        testSugar.equals(otherSugar));
+  }
 
 }
