@@ -100,5 +100,10 @@ public class FatNutrition implements NutritionType {
   public boolean equals(Object obj) {
     return helper.getEqual(this, obj);
   }
+  
+  @Override 
+  public int hashCode() {
+    return 5;
+  }
 
 }
