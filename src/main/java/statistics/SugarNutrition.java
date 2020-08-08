@@ -14,8 +14,7 @@ public class SugarNutrition implements NutritionType {
 
   @Override
   public String getName() {
-    // TODO Auto-generated method stub
-    return null;
+    return "Sugar";
   }
 
   @Override
