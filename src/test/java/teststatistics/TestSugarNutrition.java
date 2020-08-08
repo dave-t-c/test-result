@@ -227,5 +227,16 @@ public class TestSugarNutrition {
     assertTrue("Could not get equal SugarNutritions",
         testSugar.equals(otherSugar));
   }
+  
+  /**
+   * Test to try and see if different SugarNutrition objects are equal.
+   * This should return false as they have different categories.
+   */
+  @Test
+  public void testGetNonEqualSugarNutrition() {
+    testSugar.addValue("Example", 5.0);
+    assertFalse("Could not get different Sugarn Nutrition Objects to be unequal", 
+        testSugar.equals(otherSugar));
+  }
 
 }
