@@ -32,8 +32,7 @@ public class SugarNutrition implements NutritionType {
 
   @Override
   public Double getSubcategoryValue(String name) {
-    // TODO Auto-generated method stub
-    return null;
+    return 0.0;
   }
 
   @Override
