@@ -169,7 +169,7 @@ public class TestCarbs {
   @Test
   public void testGetCarbsEqual() {
     assertTrue("Could not get equal carbs nutrition", 
-        testCarbs.isEqual(testCarbs));
+        testCarbs.equals(testCarbs));
   }
   
   /**
@@ -180,7 +180,7 @@ public class TestCarbs {
   public void testGetDiffCarbsEqual() {
     diffCarbs.addValue("Example", 10.0);
     assertFalse("Could not get diff carbs to be unequal",
-        testCarbs.isEqual(diffCarbs));
+        testCarbs.equals(diffCarbs));
   }
   
   /**
