@@ -17,10 +17,12 @@ import org.junit.Test;
 public class TestSugarNutrition {
   
   SugarNutrition testSugar;
+  SugarNutrition otherSugar;
   
   @Before
   public void setUp() throws Exception {
     testSugar = new SugarNutrition();
+    otherSugar = new SugarNutrition();
   }
   
   /**
@@ -193,6 +195,17 @@ public class TestSugarNutrition {
     testSugar.addValue("Example", 5.0);
     assertEquals("Could not get formatted String with non-empty SugarNutrition",
         "Name: Sugar, Values: {Example:5.0,}, Total: 5.0", testSugar.toString());
+  }
+  
+  /**
+   * Test to get a hash code from the SugarNutrition Object.
+   * The hash code for the two objects should be the same as they have the same name and 
+   * are both empty.
+   */
+  @Test
+  public void testGetHashCode() {
+    assertTrue("Could not get equal hash code for equal SugarNutritions",
+        testSugar.hashCode() == otherSugar.hashCode());
   }
 
 }
