@@ -59,6 +59,11 @@ public class ProteinNutrition implements NutritionType {
     return helper.getValue(name, values);
   }
 
+  /**
+   * Removes a sub-category from the ProteinNutrition object.
+   * The total will be decreased if the item can be removed.
+   * @param name - Name of the sub-category to be removed.
+   */
   @Override
   public void removeSubcategory(String name) {
     total -= helper.removeSubcategory(name, values);
