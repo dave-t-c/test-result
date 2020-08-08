@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
+import java.util.HashMap;
 import main.java.statistics.ProteinNutrition;
 import org.junit.Before;
 import org.junit.Test;
@@ -139,6 +140,16 @@ public class TestProteinNutrition {
     testProtein.removeSubcategory("Example");
     assertEquals("Could not handle removing non-existing sub-category",
         0.0, testProtein.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and get the values from ProteinNutrition.
+   * This should return an Empty hash map as no items have been added.
+   */
+  @Test
+  public void testGetValuesEmpty() {
+    assertEquals("Could not get empty values", 
+        testProtein.getValues(), new HashMap<String, Double>());
   }
   
 }
