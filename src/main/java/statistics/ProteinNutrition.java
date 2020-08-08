@@ -61,8 +61,7 @@ public class ProteinNutrition implements NutritionType {
 
   @Override
   public void removeSubcategory(String name) {
-    // TODO Auto-generated method stub
-
+    values.remove(name);
   }
 
   @Override
