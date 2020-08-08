@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
@@ -102,6 +103,18 @@ public class TestSugarNutrition {
     testSugar.addValue(null, null);
     assertEquals("Could not handle adding null value",
         0.0, testSugar.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and remove a sub-category.
+   * The removed item should not be in the remaining sub-categories.
+   */
+  @Test
+  public void testRemoveSubcategory() {
+    testSugar.addValue("Example", 10.0);
+    testSugar.removeSubcategory("Example");
+    assertFalse("Could not remove sub-category",
+        testSugar.getSubcategoryNames().contains("Example"));
   }
 
 }
