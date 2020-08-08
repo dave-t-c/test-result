@@ -13,6 +13,7 @@ public class ProteinNutrition implements NutritionType {
   
   /**
    * Returns the total for the ProteinNutrition object.
+   * @return Total for this ProteinNutrition Object.
    */
   @Override
   public Double getTotal() {
