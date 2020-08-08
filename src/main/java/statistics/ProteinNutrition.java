@@ -88,6 +88,11 @@ public class ProteinNutrition implements NutritionType {
     return helper.getEqual(this, obj);
   }
   
+  /**
+   * Returns a formatted String of the ProteinNutrition Object.
+   * This contains the name, sub-categories and total.
+   * @return - Formatted String containing name, sub-categories and total.
+   */
   @Override
   public String toString() {
     return helper.getString(this);
