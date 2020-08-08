@@ -152,4 +152,15 @@ public class TestProteinNutrition {
         testProtein.getValues(), new HashMap<String, Double>());
   }
   
+  /**
+   * Test to try and get a non empty values map from ProteinNutrition.
+   * The values map should contain the item added. 
+   */
+  @Test
+  public void testGetValuesNonEmpty() {
+    testProtein.addValue("Other", 15.0);
+    assertTrue("Could not get non-empty values map",
+        testProtein.getValues().containsKey("Other"));
+  }
+  
 }
