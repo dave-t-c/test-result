@@ -1,6 +1,5 @@
 package main.java.statistics;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -32,11 +31,20 @@ public class ProteinNutrition implements NutritionType {
     return "Protein";
   }
 
+  /**
+   * Add a sub-category to the ProteinNutrition Object.
+   * @param name - Name of the sub-category
+   * @param value - value for the sub-category
+   */
   @Override
   public void addValue(String name, Double value) {
     total += helper.addValue(name, values, value);
   }
 
+  /**
+   * Returns the names of all of the sub-categories.
+   * @return - A Set of Strings of Sub-category names. 
+   */
   @Override
   public Set<String> getSubcategoryNames() {
     return values.keySet();
