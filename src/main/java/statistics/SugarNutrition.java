@@ -97,5 +97,10 @@ public class SugarNutrition implements NutritionType {
   public int hashCode() {
     return helper.getHashCode(this);
   }
+  
+  @Override
+  public boolean equals(Object obj) {
+    return true;
+  }
 
 }
