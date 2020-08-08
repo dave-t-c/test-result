@@ -2,6 +2,8 @@ package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Collections;
+
 import main.java.statistics.ProteinNutrition;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,5 +60,15 @@ public class TestProteinNutrition {
     testProtein.addValue(null,  null);
     assertEquals("Could not handle null value",
         0.0, testProtein.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and get the subcategory names for ProteinNutrition.
+   * The set returned should be empty as no items have been added.
+   */
+  @Test
+  public void testGetSubcategoryNames() {
+    assertEquals("Could not get empty subcategory",
+        Collections.emptySet(), testProtein.getSubcategoryNames());
   }
 }
