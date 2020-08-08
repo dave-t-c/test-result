@@ -172,5 +172,16 @@ public class TestSugarNutrition {
     assertTrue("Could not get item in values map",
         testSugar.getValues().containsKey("Example"));
   }
+  
+  /**
+   * Test to try and get a String from SugarNutrition.
+   * This should return a String in the format:
+   * "Name: Sugar, Values: {}, Total: 0.0"
+   */
+  @Test
+  public void testGetFormattedStringEmpty() {
+    assertEquals("Could not get formmatted String from empty SugarNutrition",
+        "Name: Sugar, Values: {}, Total: 0.0", testSugar.toString());
+  }
 
 }
