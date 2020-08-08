@@ -190,5 +190,15 @@ public class TestFatNutrition {
     assertFalse("Could not get unequal diff FatNutrition",
         testFat.equals(otherFat));
   }
+  
+  /**
+   * Test to try and get the hash code of two identical FatNutritions.
+   * The hash code returned for each should be equal as they are identical.
+   */
+  @Test
+  public void testGetHashCode() {
+    assertEquals("Could not get equal hash codes for identical FatNutrition objects.",
+        testFat.hashCode() == otherFat.hashCode());
+  }
 
 }
