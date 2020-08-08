@@ -197,7 +197,7 @@ public class TestFatNutrition {
    */
   @Test
   public void testGetHashCode() {
-    assertEquals("Could not get equal hash codes for identical FatNutrition objects.",
+    assertTrue("Could not get equal hash codes for identical FatNutrition objects.",
         testFat.hashCode() == otherFat.hashCode());
   }
 
