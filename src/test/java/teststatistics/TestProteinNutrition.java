@@ -94,4 +94,15 @@ public class TestProteinNutrition {
         0.0, testProtein.getSubcategoryValue("Other"), 0.0);
   }
   
+  /**
+   * Test to try and get the value for an added sub-category.
+   * This should return the value of the added item.
+   */
+  @Test
+  public void testGetSubcategoryValueAdded() {
+    testProtein.addValue("Other", 10.0);
+    assertEquals("Could not get correct sub-category value", 
+        10.0, testProtein.getSubcategoryValue("Other"), 0.0);
+  }
+  
 }
