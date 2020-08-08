@@ -90,7 +90,7 @@ public class ProteinNutrition implements NutritionType {
   
   @Override
   public String toString() {
-    return "Name: Protein, Values: {}, Total: 0.0";
+    return helper.getString(this);
   }
 
 }
