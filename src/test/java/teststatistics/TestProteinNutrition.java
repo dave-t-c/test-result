@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
@@ -103,6 +104,18 @@ public class TestProteinNutrition {
     testProtein.addValue("Other", 10.0);
     assertEquals("Could not get correct sub-category value", 
         10.0, testProtein.getSubcategoryValue("Other"), 0.0);
+  }
+  
+  /**
+   * Test to try and remove a sub-category from ProteinNutrition.
+   * This should mean the added value should not be in the sub-category names.
+   */
+  @Test
+  public void testRemoveSubcategory() {
+    testProtein.addValue("Other", 10.0);
+    testProtein.removeSubcategory("Other");
+    assertFalse("Could not remove sub-category",
+        testProtein.getSubcategoryNames().contains("Other"));
   }
   
 }
