@@ -127,5 +127,17 @@ public class TestSugarNutrition {
     assertFalse("Could not remove different sub-category",
         testSugar.getSubcategoryNames().contains("Other"));
   }
+  
+  /**
+   * Test to see if the total is decreased when an item is removed.
+   * The total should be 0 as the item has been added and then removed.
+   */
+  @Test
+  public void testRemoveSubcategoryDecreaseTotal() {
+    testSugar.addValue("Other", 10.0);
+    testSugar.removeSubcategory("Other");
+    assertEquals("Could not decrease total when sub-category is removed",
+        0.0, testSugar.getTotal(), 0.0);
+  }
 
 }
