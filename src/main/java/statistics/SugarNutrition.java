@@ -80,9 +80,13 @@ public class SugarNutrition implements NutritionType {
     return values;
   }
   
+  /**
+   * Gets a formatted String of the SugarNutrition Object.
+   * @return - Formatted String containing name, categories and values and total.
+   */
   @Override 
   public String toString() {
-    return "Name: Sugar, Values: {}, Total: 0.0";
+    return helper.getString(this);
   }
 
 }
