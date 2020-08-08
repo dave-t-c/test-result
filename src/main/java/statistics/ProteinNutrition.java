@@ -52,7 +52,7 @@ public class ProteinNutrition implements NutritionType {
 
   @Override
   public Double getSubcategoryValue(String name) {
-    return 0.0;
+    return helper.getValue(name, values);
   }
 
   @Override
