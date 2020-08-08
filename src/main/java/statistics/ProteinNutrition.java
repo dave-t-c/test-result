@@ -78,7 +78,11 @@ public class ProteinNutrition implements NutritionType {
     return values;
   }
   
-  
+  /**
+   * Checks to see if this ProteinNutrition is equal to another Object.
+   * @param obj - Object to be tested for equality
+   * @return if this ProteinNutrition is equal to the Object given
+   */
   @Override
   public boolean equals(Object obj) {
     return helper.getEqual(this, obj);
