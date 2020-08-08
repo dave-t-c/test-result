@@ -210,4 +210,14 @@ public class TestProteinNutrition {
         "Name: Protein, Values: {Example:5.0,}, Total: 5.0", testProtein.toString());
   }
   
+  /**
+   * Test to try and get a hash code from the ProteinNutrition class.
+   * The hash code should be the same as the objects are equal.
+   */
+  @Test
+  public void testGetEqualHashCode() {
+    assertEquals("Could not equal hashCode from ProteinNutrition",
+        testProtein.hashCode(), otherProtein.hashCode());
+  }
+  
 }
