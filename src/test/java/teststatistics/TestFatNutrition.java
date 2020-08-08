@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
@@ -176,6 +177,17 @@ public class TestFatNutrition {
   @Test
   public void testGetEqual() {
     assertTrue("Could not get equal FatNutrition",
+        testFat.equals(otherFat));
+  }
+  
+  /**
+   * Test to try and see if two differernt FatNutrition objects are equal.
+   * This should return false as one has an item.
+   */
+  @Test
+  public void testGetEqualDiffItems() {
+    otherFat.addValue("Example", 10.0);
+    assertFalse("Could not get unequal diff FatNutrition",
         testFat.equals(otherFat));
   }
 
