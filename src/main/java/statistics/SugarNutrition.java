@@ -89,6 +89,10 @@ public class SugarNutrition implements NutritionType {
     return helper.getString(this);
   }
   
+  /**
+   * Calculates a hash code for the SugarNutrtition Object.
+   * @return Hash code for this SugarNutrition Object.
+   */
   @Override
   public int hashCode() {
     return helper.getHashCode(this);
