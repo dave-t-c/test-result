@@ -69,6 +69,10 @@ public class ProteinNutrition implements NutritionType {
     total -= helper.removeSubcategory(name, values);
   }
 
+  /**
+   * Returns the values for the ProteinNutrition Object.
+   * @return String, Double HashMap containing sub-category names / values.
+   */
   @Override
   public HashMap<String, Double> getValues() {
     return values;
