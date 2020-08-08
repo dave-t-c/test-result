@@ -181,7 +181,7 @@ public class TestFatNutrition {
   }
   
   /**
-   * Test to try and see if two differernt FatNutrition objects are equal.
+   * Test to try and see if two different FatNutrition objects are equal.
    * This should return false as one has an item.
    */
   @Test
@@ -199,6 +199,17 @@ public class TestFatNutrition {
   public void testGetHashCode() {
     assertTrue("Could not get equal hash codes for identical FatNutrition objects.",
         testFat.hashCode() == otherFat.hashCode());
+  }
+  
+  /**
+   * Test to try and get a different hash code for a FatNutrition object that 
+   * has different items.
+   */
+  @Test
+  public void testGetHashCodeDiffItems() {
+    testFat.addValue("Example", 10.0);
+    assertTrue("Could not get different hash codes",
+        testFat.hashCode() != otherFat.hashCode());
   }
 
 }
