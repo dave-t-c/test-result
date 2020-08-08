@@ -116,5 +116,16 @@ public class TestSugarNutrition {
     assertFalse("Could not remove sub-category",
         testSugar.getSubcategoryNames().contains("Example"));
   }
+  
+  /**
+   * Test to try and remove a different sub-category.
+   */
+  @Test
+  public void testRemoveDiffSubcategory() {
+    testSugar.addValue("Other", 5.0);
+    testSugar.removeSubcategory("Other");
+    assertFalse("Could not remove different sub-category",
+        testSugar.getSubcategoryNames().contains("Other"));
+  }
 
 }
