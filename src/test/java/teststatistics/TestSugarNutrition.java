@@ -21,5 +21,18 @@ public class TestSugarNutrition {
     assertEquals("Could not get new SugarNutrition Object",
         0.0, testSugar.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and add an item to the SugarNutrition item.
+   * The total should be increased by the value added.
+   */
+  @Test
+  public void testAddSugarNutrition() {
+    SugarNutrition testSugar = new SugarNutrition();
+    testSugar.addValue("Example", 10.0);
+    assertEquals("Could not add item to SugarNutrition",
+        10.0, testSugar.getTotal(), 0.0);
+  }
+  
 
 }
