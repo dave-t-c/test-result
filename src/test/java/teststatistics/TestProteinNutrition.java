@@ -3,6 +3,7 @@ package test.java.teststatistics;
 import static org.junit.Assert.assertEquals;
 
 import main.java.statistics.ProteinNutrition;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,12 +12,18 @@ import org.junit.Test;
  */
 public class TestProteinNutrition {
   
+  ProteinNutrition testProtein;
+  
+  @Before
+  public void setUp() throws Exception {
+    testProtein = new ProteinNutrition();
+  }
+  
   /**
    * Test to try and create a new instance of the ProteinNutrition class.
    */
   @Test
   public void testCreateNewProtein() {
-    ProteinNutrition testProtein = new ProteinNutrition();
     assertEquals("Could not get new ProteinNutrition", 
         0.0, testProtein.getTotal(), 0.0);
   }
@@ -27,7 +34,6 @@ public class TestProteinNutrition {
    */
   @Test
   public void testAddItem() {
-    ProteinNutrition testProtein = new ProteinNutrition();
     testProtein.addValue("Example", 10.0);
     assertEquals("Could not add value to ProteinNutrition",
         10.0, testProtein.getTotal(), 0.0);
@@ -39,7 +45,6 @@ public class TestProteinNutrition {
    */
   @Test
   public void testGetName() {
-    ProteinNutrition testProtein = new ProteinNutrition();
     assertEquals("Could not get correct protein name",
         "Protein", testProtein.getName());
   }
