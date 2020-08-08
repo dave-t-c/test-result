@@ -32,4 +32,15 @@ public class TestProteinNutrition {
     assertEquals("Could not add value to ProteinNutrition",
         10.0, testProtein.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and get the name of the ProteinNutrition type.
+   * The name returned should be "Protein"
+   */
+  @Test
+  public void testGetName() {
+    ProteinNutrition testProtein = new ProteinNutrition();
+    assertEquals("Could not get correct protein name",
+        "Protein", testProtein.getName());
+  }
 }
