@@ -90,6 +90,12 @@ public class FatNutrition implements NutritionType {
     return helper.getString(this);
   }
   
+  /**
+   * Method for checking the equality of this FatNutrition instance with
+   * another object.
+   * @param obj - Object to compare against.
+   * @return - If the Objects are equal.
+   */
   @Override
   public boolean equals(Object obj) {
     return helper.getEqual(this, obj);
