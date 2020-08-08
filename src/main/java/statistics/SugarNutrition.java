@@ -88,5 +88,10 @@ public class SugarNutrition implements NutritionType {
   public String toString() {
     return helper.getString(this);
   }
+  
+  @Override
+  public int hashCode() {
+    return 5;
+  }
 
 }
