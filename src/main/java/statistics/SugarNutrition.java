@@ -1,5 +1,6 @@
 package main.java.statistics;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -24,8 +25,7 @@ public class SugarNutrition implements NutritionType {
 
   @Override
   public Set<String> getSubcategoryNames() {
-    // TODO Auto-generated method stub
-    return null;
+    return Collections.emptySet();
   }
 
   @Override
