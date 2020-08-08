@@ -12,6 +12,7 @@ public class ProteinNutrition implements NutritionType {
 
   private Double total = 0.0;
   private HashMap<String, Double> values = new HashMap<>();
+  private NutritionHelper helper = new NutritionHelper();
   
   /**
    * Returns the total for the ProteinNutrition object.
@@ -33,8 +34,7 @@ public class ProteinNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    total += name == null || value == null ? 0.0 : value;
-    values.put(name, value);
+    total += helper.addValue(name, values, value);
   }
 
   @Override
