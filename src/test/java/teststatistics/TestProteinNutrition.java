@@ -207,7 +207,7 @@ public class TestProteinNutrition {
   public void testGetStringWithSubcategory() {
     testProtein.addValue("Example", 5.0);
     assertEquals("Could not get formmated String from ProteinNutrition with item",
-        "Name: Protein, Values: {Example:5.0,}, Total: 0.0", testProtein.toString());
+        "Name: Protein, Values: {Example:5.0,}, Total: 5.0", testProtein.toString());
   }
   
 }
