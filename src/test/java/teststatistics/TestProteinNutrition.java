@@ -20,4 +20,16 @@ public class TestProteinNutrition {
     assertEquals("Could not get new ProteinNutrition", 
         0.0, testProtein.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and add a value to the ProteinNutrition object.
+   * The total should have changed to include the new item.
+   */
+  @Test
+  public void testAddItem() {
+    ProteinNutrition testProtein = new ProteinNutrition();
+    testProtein.addValue("Example", 10.0);
+    assertEquals("Could not add value to ProteinNutrition",
+        10.0, testProtein.getTotal(), 0.0);
+  }
 }
