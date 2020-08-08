@@ -101,6 +101,10 @@ public class FatNutrition implements NutritionType {
     return helper.getEqual(this, obj);
   }
   
+  /**
+   * Calculate a hash code for the FatNutrition instance.
+   * @return int - hash code for this FatNutrition instance.
+   */
   @Override 
   public int hashCode() {
     return helper.getHashCode(this);
