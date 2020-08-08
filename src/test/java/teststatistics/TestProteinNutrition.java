@@ -48,4 +48,15 @@ public class TestProteinNutrition {
     assertEquals("Could not get correct protein name",
         "Protein", testProtein.getName());
   }
+  
+  /**
+   * Test to try and add null values to the ProteinNutrition.
+   * The total should not be increased and should be 0.0
+   */
+  @Test
+  public void testAddNullValues() {
+    testProtein.addValue(null,  null);
+    assertEquals("Could not handle null value",
+        0.0, testProtein.getTotal(), 0.0);
+  }
 }
