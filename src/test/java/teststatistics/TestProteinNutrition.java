@@ -220,4 +220,15 @@ public class TestProteinNutrition {
         testProtein.hashCode(), otherProtein.hashCode());
   }
   
+  /**
+   * Test to try and get different hash codes for different ProteinNutrition objects.
+   * The hash codes should be different as the objects have different sub-categories.
+   */
+  @Test
+  public void testGetDifferentHashCodes() {
+    testProtein.addValue("Example", 5.0);
+    assertTrue("Could not get different hash codes for different ProteinNutrition objects",
+        testProtein.hashCode() != otherProtein.hashCode());
+  }
+  
 }
