@@ -11,6 +11,9 @@ import org.junit.Test;
  */
 public class TestProteinNutrition {
   
+  /**
+   * Test to try and create a new instance of the ProteinNutrition class.
+   */
   @Test
   public void testCreateNewProtein() {
     ProteinNutrition testProtein = new ProteinNutrition();
