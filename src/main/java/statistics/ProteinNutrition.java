@@ -50,6 +50,10 @@ public class ProteinNutrition implements NutritionType {
     return values.keySet();
   }
 
+  /**
+   * Gets the value for a given sub-category.
+   * @return Value for sub-category if it exists, 0 if not. 
+   */
   @Override
   public Double getSubcategoryValue(String name) {
     return helper.getValue(name, values);
