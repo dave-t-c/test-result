@@ -5,9 +5,11 @@ import java.util.Set;
 
 public class SugarNutrition implements NutritionType {
 
+  private Double total = 0.0;
+  
   @Override
   public Double getTotal() {
-    return 0.0;
+    return total;
   }
 
   @Override
@@ -18,8 +20,7 @@ public class SugarNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    // TODO Auto-generated method stub
-
+    total += value;
   }
 
   @Override
