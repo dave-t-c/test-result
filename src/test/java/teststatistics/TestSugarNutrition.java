@@ -139,5 +139,16 @@ public class TestSugarNutrition {
     assertEquals("Could not decrease total when sub-category is removed",
         0.0, testSugar.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and remove a category that has not been added.
+   * The total should not be changed and should be 0.
+   */
+  @Test
+  public void testRemoveNonAddedCategory() {
+    testSugar.removeSubcategory("Other");
+    assertEquals("Could not get correct total when removing non-added category",
+        0.0, testSugar.getTotal(), 0.0);
+  }
 
 }
