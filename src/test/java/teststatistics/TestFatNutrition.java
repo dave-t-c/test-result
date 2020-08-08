@@ -16,10 +16,12 @@ import org.junit.Test;
 public class TestFatNutrition {
   
   private FatNutrition testFat;
+  private FatNutrition otherFat;
   
   @Before
   public void setUp() throws Exception {
     testFat = new FatNutrition();
+    otherFat = new FatNutrition();
   }
 
   /**
@@ -165,6 +167,16 @@ public class TestFatNutrition {
     testFat.addValue("Example", 10.0);
     assertEquals("Could not get formatted String for non-empty FatNutrition",
         "Name: Fat, Values: {Example:10.0,}, Total: 10.0", testFat.toString());
+  }
+  
+  /**
+   * Test to try and see if an object is equal itself.
+   * This should return true as they are both empty and have the same total.
+   */
+  @Test
+  public void testGetEqual() {
+    assertTrue("Could not get equal FatNutrition",
+        testFat.equals(otherFat));
   }
 
 }
