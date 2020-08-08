@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
+import java.util.HashMap;
 import main.java.statistics.SugarNutrition;
 import org.junit.Before;
 import org.junit.Test;
@@ -149,6 +150,16 @@ public class TestSugarNutrition {
     testSugar.removeSubcategory("Other");
     assertEquals("Could not get correct total when removing non-added category",
         0.0, testSugar.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and get the values map from SugarNutrition.
+   * This should return an empty map as no items have been added.
+   */
+  @Test
+  public void testGetEmptyValuesMap() {
+    assertEquals("Could not get empty values map",
+        new HashMap<String, Double>(), testSugar.getValues());
   }
 
 }
