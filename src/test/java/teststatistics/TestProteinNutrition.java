@@ -199,4 +199,15 @@ public class TestProteinNutrition {
         "Name: Protein, Values: {}, Total: 0.0", testProtein.toString());
   }
   
+  /**
+   * Test to try and get a formatted string from ProteinNutrition, 
+   * where it contains a sub-category.
+   */
+  @Test
+  public void testGetStringWithSubcategory() {
+    testProtein.addValue("Example", 5.0);
+    assertEquals("Could not get formmated String from ProteinNutrition with item",
+        "Name: Protein, Values: {Example:5.0,}, Total: 0.0", testProtein.toString());
+  }
+  
 }
