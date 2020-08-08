@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import main.java.statistics.SugarNutrition;
@@ -60,5 +61,15 @@ public class TestSugarNutrition {
     assertEquals("Could not get empty sub-category names set",
         Collections.emptySet(), testSugar.getSubcategoryNames());
   }  
+  
+  /**
+   * Test to try and add a sub-category, then check to see that it is in the returned set of names.
+   */
+  @Test
+  public void testGetSubcategoryNameNonEmpty() {
+    testSugar.addValue("Example", 10.0);
+    assertTrue("Could not add Subcategory name to SugarNutrition",
+        testSugar.getSubcategoryNames().contains("Example"));
+  }
 
 }
