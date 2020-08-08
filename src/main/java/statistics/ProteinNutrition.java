@@ -11,6 +11,7 @@ import java.util.Set;
 public class ProteinNutrition implements NutritionType {
 
   private Double total = 0.0;
+  private HashMap<String, Double> values = new HashMap<>();
   
   /**
    * Returns the total for the ProteinNutrition object.
@@ -33,11 +34,12 @@ public class ProteinNutrition implements NutritionType {
   @Override
   public void addValue(String name, Double value) {
     total += name == null || value == null ? 0.0 : value;
+    values.put(name, value);
   }
 
   @Override
   public Set<String> getSubcategoryNames() {
-    return Collections.emptySet();
+    return values.keySet();
   }
 
   @Override
