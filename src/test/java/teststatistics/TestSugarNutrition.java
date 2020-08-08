@@ -81,5 +81,16 @@ public class TestSugarNutrition {
     assertEquals("Could not get correct sub-category value",
         0.0, testSugar.getSubcategoryValue("Other"), 0.0);
   }
+  
+  /**
+   * Test to try and get the value for a specific sub-category.
+   * The value returned should be the same as for the category added.
+   */
+  @Test
+  public void testGetSubcategoryValueAdded() {
+    testSugar.addValue("Other", 5.0);
+    assertEquals("Could not get sub-category for specific value",
+        5.0, testSugar.getSubcategoryValue("Other"), 0.0);
+  }
 
 }
