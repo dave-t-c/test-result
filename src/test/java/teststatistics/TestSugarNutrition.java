@@ -161,5 +161,16 @@ public class TestSugarNutrition {
     assertEquals("Could not get empty values map",
         new HashMap<String, Double>(), testSugar.getValues());
   }
+  
+  /**
+   * Test to try and get a non empty values map.
+   * It should not be empty as an item has been added.
+   */
+  @Test
+  public void testGetNonEmptyValuesMap() {
+    testSugar.addValue("Example", 10.0);
+    assertTrue("Could not get item in values map",
+        testSugar.getValues().containsKey("Example"));
+  }
 
 }
