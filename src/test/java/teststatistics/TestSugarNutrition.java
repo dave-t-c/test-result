@@ -34,5 +34,16 @@ public class TestSugarNutrition {
         10.0, testSugar.getTotal(), 0.0);
   }
   
+  /**
+   * Test to try and get the name of the SugarNutrition class.
+   * This should return 'Sugar'
+   */
+  @Test
+  public void testGetSugarNutritionName() {
+    SugarNutrition testSugar = new SugarNutrition();
+    assertEquals("Could not get correct name for SugarNutrition",
+        "Sugar", testSugar.getName());
+  }
+  
 
 }
