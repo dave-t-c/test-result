@@ -71,5 +71,15 @@ public class TestSugarNutrition {
     assertTrue("Could not add Subcategory name to SugarNutrition",
         testSugar.getSubcategoryNames().contains("Example"));
   }
+  
+  /**
+   * Test to try and get a given value for a specified category.
+   * This should return 0 as the category has not been added.
+   */
+  @Test
+  public void testGetSubcategoryValue() {
+    assertEquals("Could not get correct sub-category value",
+        0.0, testSugar.getSubcategoryValue("Other"), 0.0);
+  }
 
 }
