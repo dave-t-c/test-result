@@ -17,10 +17,12 @@ import org.junit.Test;
 public class TestProteinNutrition {
   
   ProteinNutrition testProtein;
+  ProteinNutrition otherProtein;
   
   @Before
   public void setUp() throws Exception {
     testProtein = new ProteinNutrition();
+    otherProtein = new ProteinNutrition();
   }
   
   /**
@@ -161,6 +163,17 @@ public class TestProteinNutrition {
     testProtein.addValue("Other", 15.0);
     assertTrue("Could not get non-empty values map",
         testProtein.getValues().containsKey("Other"));
+  }
+  
+  /**
+   * Test to see if two identical ProteinNutrition objects 
+   * are equal.
+   * They should be as they are both empty, have the same total and name.
+   */
+  @Test
+  public void testGetEqual() {
+    assertTrue("Could not get equal ProteinNutrition Objects",
+        testProtein.equals(otherProtein));
   }
   
 }
