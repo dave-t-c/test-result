@@ -98,6 +98,11 @@ public class SugarNutrition implements NutritionType {
     return helper.getHashCode(this);
   }
   
+  /**
+   * Checks the equality of this SugarNutrition with an Object.
+   * @param obj - Object to test equality with.
+   * @return Equality of this SugarNutrition Object and the Object passed.
+   */
   @Override
   public boolean equals(Object obj) {
     return helper.getEqual(this, obj);
