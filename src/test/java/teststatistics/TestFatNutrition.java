@@ -164,7 +164,7 @@ public class TestFatNutrition {
   public void testGetNonEmptyString() {
     testFat.addValue("Example", 10.0);
     assertEquals("Could not get formatted String for non-empty FatNutrition",
-        "Name: Fat, Values: {Example:10.0,}, Total: 0.0", testFat.toString());
+        "Name: Fat, Values: {Example:10.0,}, Total: 10.0", testFat.toString());
   }
 
 }
