@@ -118,4 +118,16 @@ public class TestProteinNutrition {
         testProtein.getSubcategoryNames().contains("Other"));
   }
   
+  /**
+   * Test to remove a value using removeSubcategory.
+   * The total should also decrease.
+   */
+  @Test
+  public void testRemoveSubcategoryCorrectTotal() {
+    testProtein.addValue("Example", 5.0);
+    testProtein.removeSubcategory("Example");
+    assertEquals("Could not decrease total when removing category",
+        0.0, testProtein.getTotal(), 0.0);
+  }
+  
 }
