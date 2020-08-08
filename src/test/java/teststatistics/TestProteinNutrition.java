@@ -130,4 +130,15 @@ public class TestProteinNutrition {
         0.0, testProtein.getTotal(), 0.0);
   }
   
+  /**
+   * Test to try and remove a sub-category that has not been added.
+   * The total should remain at 0.
+   */
+  @Test
+  public void testRemoveNonAddedCategory() {
+    testProtein.removeSubcategory("Example");
+    assertEquals("Could not handle removing non-existing sub-category",
+        0.0, testProtein.getTotal(), 0.0);
+  }
+  
 }
