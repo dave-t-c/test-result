@@ -192,7 +192,7 @@ public class TestSugarNutrition {
   public void testGetFormattedStringNoneEmpty() {
     testSugar.addValue("Example", 5.0);
     assertEquals("Could not get formatted String with non-empty SugarNutrition",
-        "Name: Sugar, Values: {Example:5.0,}, Total: 0.0", testSugar.toString());
+        "Name: Sugar, Values: {Example:5.0,}, Total: 5.0", testSugar.toString());
   }
 
 }
