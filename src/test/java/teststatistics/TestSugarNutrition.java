@@ -3,7 +3,6 @@ package test.java.teststatistics;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Collections;
-
 import main.java.statistics.SugarNutrition;
 import org.junit.Before;
 import org.junit.Test;
