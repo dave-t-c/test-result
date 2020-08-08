@@ -71,7 +71,7 @@ public class ProteinNutrition implements NutritionType {
 
   @Override
   public HashMap<String, Double> getValues() {
-    return new HashMap<String, Double>();
+    return values;
   }
 
 }
