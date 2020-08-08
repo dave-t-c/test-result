@@ -79,5 +79,10 @@ public class SugarNutrition implements NutritionType {
   public HashMap<String, Double> getValues() {
     return values;
   }
+  
+  @Override 
+  public String toString() {
+    return "Name: Sugar, Values: {}, Total: 0.0";
+  }
 
 }
