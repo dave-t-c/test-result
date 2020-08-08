@@ -3,6 +3,7 @@ package test.java.teststatistics;
 import static org.junit.Assert.assertEquals;
 
 import main.java.statistics.SugarNutrition;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,13 +12,19 @@ import org.junit.Test;
  */
 public class TestSugarNutrition {
   
+  SugarNutrition testSugar;
+  
+  @Before
+  public void setUp() throws Exception {
+    testSugar = new SugarNutrition();
+  }
+  
   /**
    * Test to try and create a new SugarNutrition instance.
    * The total for it should be 0.
    */
   @Test
   public void testCreateNewSugarNutrition() {
-    SugarNutrition testSugar = new SugarNutrition();
     assertEquals("Could not get new SugarNutrition Object",
         0.0, testSugar.getTotal(), 0.0);
   }
@@ -28,7 +35,6 @@ public class TestSugarNutrition {
    */
   @Test
   public void testAddSugarNutrition() {
-    SugarNutrition testSugar = new SugarNutrition();
     testSugar.addValue("Example", 10.0);
     assertEquals("Could not add item to SugarNutrition",
         10.0, testSugar.getTotal(), 0.0);
@@ -40,7 +46,6 @@ public class TestSugarNutrition {
    */
   @Test
   public void testGetSugarNutritionName() {
-    SugarNutrition testSugar = new SugarNutrition();
     assertEquals("Could not get correct name for SugarNutrition",
         "Sugar", testSugar.getName());
   }
