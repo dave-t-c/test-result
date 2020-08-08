@@ -176,4 +176,16 @@ public class TestProteinNutrition {
         testProtein.equals(otherProtein));
   }
   
+  /**
+   * Test to try and see if different ProteinNutrition Objects are equal.
+   * This should return false as the objects are different as they have
+   * different items.
+   */
+  @Test
+  public void testGetEqualDiffObjects() {
+    testProtein.addValue("Example", 10.0);
+    assertFalse("Could not get different ProteinNutrition to be unequal",
+        testProtein.equals(otherProtein));  
+  }
+  
 }
