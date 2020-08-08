@@ -98,6 +98,10 @@ public class ProteinNutrition implements NutritionType {
     return helper.getString(this);
   }
   
+  /**
+   * Returns the hash code for this ProteinNutrition Object.
+   * @return - hash code for this ProteinNutrition Object.
+   */
   @Override
   public int hashCode() {
     return helper.getHashCode(this);
