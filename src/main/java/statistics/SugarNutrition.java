@@ -71,6 +71,10 @@ public class SugarNutrition implements NutritionType {
     total -= helper.removeSubcategory(name, values);
   }
 
+  /**
+   * Method for returning the Values map.
+   * @return values map containing all sub-category, value pairs.
+   */
   @Override
   public HashMap<String, Double> getValues() {
     return values;
