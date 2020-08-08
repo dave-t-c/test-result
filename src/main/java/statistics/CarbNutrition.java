@@ -82,7 +82,8 @@ public class CarbNutrition implements NutritionType {
    * @param obj - Object to compare this CarbsNutrition instance against.
    * @return if the CarbsNutrition instance is equal to the given Object.
    */
-  public boolean isEqual(Object obj) {
+  @Override
+  public boolean equals(Object obj) {
     return helper.getEqual(this, obj);
   }
 
