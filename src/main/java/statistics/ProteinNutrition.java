@@ -87,5 +87,10 @@ public class ProteinNutrition implements NutritionType {
   public boolean equals(Object obj) {
     return helper.getEqual(this, obj);
   }
+  
+  @Override
+  public String toString() {
+    return "Name: Protein, Values: {}, Total: 0.0";
+  }
 
 }
