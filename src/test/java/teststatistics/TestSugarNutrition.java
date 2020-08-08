@@ -92,5 +92,16 @@ public class TestSugarNutrition {
     assertEquals("Could not get sub-category for specific value",
         5.0, testSugar.getSubcategoryValue("Other"), 0.0);
   }
+  
+  /**
+   * Test to try and add null values to SugarNutrition.
+   * The total should not be changed and it should still be 0.
+   */
+  @Test
+  public void testAddNullValues() {
+    testSugar.addValue(null, null);
+    assertEquals("Could not handle adding null value",
+        0.0, testSugar.getTotal(), 0.0);
+  }
 
 }
