@@ -71,8 +71,7 @@ public class ProteinNutrition implements NutritionType {
 
   @Override
   public HashMap<String, Double> getValues() {
-    // TODO Auto-generated method stub
-    return null;
+    return new HashMap<String, Double>();
   }
 
 }
