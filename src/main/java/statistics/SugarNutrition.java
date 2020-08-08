@@ -61,6 +61,11 @@ public class SugarNutrition implements NutritionType {
     return helper.getValue(name, values);
   }
 
+  /**
+   * Removes a given sub-category from the values map.
+   * The total will be decreased by the value in the map.
+   * If the value is not in the map, the total will not change.
+   */
   @Override
   public void removeSubcategory(String name) {
     total -= helper.removeSubcategory(name, values);
