@@ -9,12 +9,14 @@ import java.util.Set;
  */
 public class ProteinNutrition implements NutritionType {
 
+  private Double total = 0.0;
+  
   /**
    * Returns the total for the ProteinNutrition object.
    */
   @Override
   public Double getTotal() {
-    return 0.0;
+    return total;
   }
 
   @Override
@@ -25,8 +27,7 @@ public class ProteinNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    // TODO Auto-generated method stub
-
+    total += value;
   }
 
   @Override
