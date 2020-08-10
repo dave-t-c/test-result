@@ -334,7 +334,7 @@ public class TestNutritionHelper {
   @Test
   public void testEqualNutritionTypesDiffNames() {
     assertFalse("Could not get NutritionTypes with equal names to be un-equal",
-        testHelper.getEqual(testNutrition, duplicTestNutrition));
+        testHelper.getEqual(testNutrition, otherNutrition));
   }
 
 }
