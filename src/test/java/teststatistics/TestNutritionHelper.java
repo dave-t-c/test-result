@@ -325,5 +325,16 @@ public class TestNutritionHelper {
     assertTrue("Could not get different hash code for different values",
         testHelper.getHashCode(testNutrition) != testHelper.getHashCode(duplicTestNutrition));
   }  
+  
+  /**
+   * Test to try and see if two nutrition types with the same values but 
+   * different names are equal.
+   * This should be false, as the names must be equal for the NutritionTypes to be equal.
+   */
+  @Test
+  public void testEqualNutritionTypesDiffNames() {
+    assertFalse("Could not get NutritionTypes with equal names to be un-equal",
+        testHelper.getEqual(testNutrition, duplicTestNutrition));
+  }
 
 }
