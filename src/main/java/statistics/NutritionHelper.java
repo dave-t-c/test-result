@@ -102,7 +102,14 @@ public class NutritionHelper {
       return false;
     }
     
-    return (type.getValues().equals(objType.getValues()));
+    //Return false if the names are null.
+    if (type.getName() == null || objType.getName() == null) {
+      return false;
+    }
+    
+    //For two NutritionTypes to be equal, 
+    return ((type.getValues().equals(objType.getValues())) && (
+        type.getName().equals(objType.getName())));
   }
   
   /**
