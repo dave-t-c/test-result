@@ -11,6 +11,10 @@ public class CaloriesNutrition implements NutritionType {
 
   private Double total = 0.0;
   
+  /**
+   * Returns the total for this CaloriesNutrition.
+   * @return Double - Total Calories.
+   */
   @Override
   public Double getTotal() {
     return total;
