@@ -21,4 +21,16 @@ public class TestCaloriesNutrition {
     assertEquals("Could not get new Calories instance",
         0.0, testCalories.getTotal(), 0.0);
   }
+  
+  /**
+   * Add a test to try and add a value.
+   * The total should be increased by the value added.
+   */
+  @Test
+  public void testAddValue() {
+    CaloriesNutrition testCalories = new CaloriesNutrition();
+    testCalories.addValue("Example", 5.0);
+    assertEquals("Could not add value to Calories Nutrition",
+        5.0, testCalories.getTotal(), 0.0);
+  }
 }
