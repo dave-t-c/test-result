@@ -209,4 +209,14 @@ public class TestCaloriesNutrition {
     assertFalse("Could not get different hash codes for different CaloriesNutritions",
         testCalories.hashCode() == otherCalories.hashCode());
   }
+  
+  /**
+   * Test to try and see if two empty CaloriesNutritions are equal.
+   * This should return true as they have the same items and totals.
+   */
+  @Test
+  public void testGetCaloriesNutritionEqual() {
+    assertTrue("Could not get equal CaloriesNutrition Objects",
+        testCalories.equals(otherCalories));
+  }
 }
