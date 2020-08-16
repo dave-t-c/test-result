@@ -33,8 +33,7 @@ public class CaloriesNutrition implements NutritionType {
 
   @Override
   public void addValue(String name, Double value) {
-    total += value;
-    values.put(name, value);
+    total += helper.addValue(name, values, value);
   }
 
   @Override
