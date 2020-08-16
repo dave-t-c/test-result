@@ -4,6 +4,7 @@
 
 
 ![](https://github.com/dave-t-c/test-result/workflows/Java%20CI%20with%20Maven/badge.svg)
+![](https://github.com/dave-t-c/test-result/workflows/Checkstyle/badge.svg)
 ![](https://img.shields.io/badge/license-GPL--3.0-green)
 ![](https://img.shields.io/github/languages/code-size/dave-t-c/test-result)
 ![](https://img.shields.io/github/languages/top/dave-t-c/test-result)
