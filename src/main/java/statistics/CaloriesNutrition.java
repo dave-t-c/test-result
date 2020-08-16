@@ -71,9 +71,13 @@ public class CaloriesNutrition implements NutritionType {
     total -= helper.removeSubcategory(name, values);
   }
 
+  /**
+   * Return the values for the CaloriesNutrition Object.
+   * @return - values map for the CaloriesNutrition Object.
+   */
   @Override
   public HashMap<String, Double> getValues() {
-    return new HashMap<String, Double>();
+    return values;
   }
 
 }
