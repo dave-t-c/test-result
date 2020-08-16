@@ -2,6 +2,7 @@ package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Collections;
 import main.java.statistics.CaloriesNutrition;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,6 +49,16 @@ public class TestCaloriesNutrition {
   public void testGetCaloriesName() {
     assertEquals("Could not get correct Name for Calories Nutrition",
         "Calories", testCalories.getName());
+  }
+  
+  /**
+   * Test to try and get the sub-category names from Calories Nutrition.
+   * This should return an empty set as none have been added.
+   */
+  @Test
+  public void testGetSubcategoryNames() {
+    assertEquals("Could not get empty sub-category names",
+        Collections.emptySet(), testCalories.getSubcategoryNames());
   }
   
   
