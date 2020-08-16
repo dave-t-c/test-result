@@ -2,6 +2,7 @@ package main.java.statistics;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -11,6 +12,7 @@ import java.util.Set;
 public class CaloriesNutrition implements NutritionType {
 
   private Double total = 0.0;
+  private HashSet<String> namesSet = new HashSet<>();
   
   /**
    * Returns the total for this CaloriesNutrition.
@@ -33,11 +35,12 @@ public class CaloriesNutrition implements NutritionType {
   @Override
   public void addValue(String name, Double value) {
     total += value;
+    namesSet.add(name);
   }
 
   @Override
   public Set<String> getSubcategoryNames() {
-    return Collections.emptySet();
+    return namesSet;
   }
 
   @Override
