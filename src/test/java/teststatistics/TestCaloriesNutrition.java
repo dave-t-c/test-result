@@ -176,4 +176,14 @@ public class TestCaloriesNutrition {
         "Name: Calories, Values: {}, Total: 0.0", testCalories.toString());
   }
   
+  /**
+   * Test to try and get a formatted String that contains
+   * an item.  
+   */
+  @Test
+  public void testGetFormattedStringNonEmpty() {
+    testCalories.addValue("Example", 25.0);
+    assertEquals("Could not get formatted String from non-empty CaloriesNutrition",
+        "Name: Calories, Values: {Example:25.0,}, Total: 0.0", testCalories.toString());
+  }
 }
