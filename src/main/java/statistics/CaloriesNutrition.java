@@ -100,7 +100,7 @@ public class CaloriesNutrition implements NutritionType {
   }
   
   /**
-   * Check if this CaloriesNutrition and another Object are equal
+   * Check if this CaloriesNutrition and another Object are equal.
    * @param obj - Object to compare this CaloriesNutrition with.
    * @return - result of the equality test.
    */
