@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import main.java.statistics.CaloriesNutrition;
@@ -59,6 +60,17 @@ public class TestCaloriesNutrition {
   public void testGetSubcategoryNames() {
     assertEquals("Could not get empty sub-category names",
         Collections.emptySet(), testCalories.getSubcategoryNames());
+  }
+  
+  /**
+   * Test to add an item then get the sub-category items.
+   * This should contain the name of the item added.
+   */
+  @Test
+  public void testGetSubcategoryNamesAdded() {
+    testCalories.addValue("Example", 5.0);
+    assertTrue("Could not get set containg added item",
+        testCalories.getSubcategoryNames().contains("Example"));
   }
   
   
