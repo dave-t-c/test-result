@@ -73,5 +73,15 @@ public class TestCaloriesNutrition {
         testCalories.getSubcategoryNames().contains("Example"));
   }
   
+  /**
+   * Test to get the sub-category value for a category that has not been added.
+   * This should return 0.0
+   */
+  @Test
+  public void testGetNonAddedSubcategoryValue() {
+    assertEquals("Could not get the correct value for non added sub-category",
+        0.0, testCalories.getSubcategoryValue("Other"), 0.0);
+  }
+  
   
 }
