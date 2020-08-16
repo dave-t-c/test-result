@@ -31,11 +31,21 @@ public class CaloriesNutrition implements NutritionType {
     return "Calories";
   }
 
+  /**
+   * Adds a value to the CaloriesNutrition Object.
+   * @param name - Name of Sub-category to add.
+   * @param value - Corresponding value for the Sub-category.
+   */
   @Override
   public void addValue(String name, Double value) {
     total += helper.addValue(name, values, value);
   }
 
+  /**
+   * Returns all of the names of the added 
+   * sub-categories.
+   * @return Set of all the Sub-category Names.
+   */
   @Override
   public Set<String> getSubcategoryNames() {
     return values.keySet();
