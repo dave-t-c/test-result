@@ -94,5 +94,16 @@ public class TestCaloriesNutrition {
         12.0, testCalories.getSubcategoryValue("Other"), 0.0);
   }
   
+  /**
+   * Test to try and add null values.
+   * The values should not be added, and the total should stay
+   * at 0.0.
+   */
+  @Test
+  public void testAddNulLValues() {
+    testCalories.addValue(null, null);
+    assertEquals("Could not handle adding null values",
+        0.0, testCalories.getTotal(), 0.0);
+  }
   
 }
