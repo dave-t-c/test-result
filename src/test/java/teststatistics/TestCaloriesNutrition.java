@@ -164,4 +164,16 @@ public class TestCaloriesNutrition {
         testCalories.getValues().containsKey("Example"));
   }
   
+  /**
+   * Test to try and get a formatted String from the 
+   * CaloriesNutrition Object.
+   * This should return a String in the format:
+   * "Name: Calories, Values: {}, Total: 0.0"
+   */
+  @Test
+  public void testGetEmptyFormattedString() {
+    assertEquals("Could not get empty formatted String",
+        "Name: Calories, Values: {}, Total: 0.0", testCalories.toString());
+  }
+  
 }
