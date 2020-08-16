@@ -90,9 +90,13 @@ public class CaloriesNutrition implements NutritionType {
     return helper.getString(this);
   }
   
+  /**
+   * Gets a hash code for this CaloriesNutrition Object.
+   * @return Hash Code value for this CaloriesNutrition.
+   */
   @Override
   public int hashCode() {
-    return 5;
+    return helper.getHashCode(this);
   }
 
 }
