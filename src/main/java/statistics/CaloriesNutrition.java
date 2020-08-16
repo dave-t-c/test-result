@@ -80,6 +80,11 @@ public class CaloriesNutrition implements NutritionType {
     return values;
   }
   
+  /**
+   * Returns a formatted String of the CaloriesNutrition Object.
+   * This will include the items and the total.
+   * @return Formatted String of CaloriesNutrition.
+   */
   @Override
   public String toString() {
     return helper.getString(this);
