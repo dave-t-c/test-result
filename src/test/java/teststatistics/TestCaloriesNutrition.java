@@ -153,4 +153,15 @@ public class TestCaloriesNutrition {
         new HashMap<String, Double>(), testCalories.getValues());
   }
   
+  /**
+   * Test to try and get the values map when an item has been added.
+   * The added item should be in the returned values map.
+   */
+  @Test
+  public void testGetNonEmptyValues() {
+    testCalories.addValue("Example", 15.0);
+    assertTrue("Could not get the item in the returned values map",
+        testCalories.getValues().containsKey("Example"));
+  }
+  
 }
