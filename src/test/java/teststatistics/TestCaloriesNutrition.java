@@ -198,4 +198,15 @@ public class TestCaloriesNutrition {
     assertTrue("Could not get equal hash codes for identical CalorieNutritions",
         testCalories.hashCode() == otherCalories.hashCode());
   }
+  
+  /**
+   * Test to try and get the hash code for different CaloriesNutritions.
+   * The hash code should be different as they have different values.
+   */
+  @Test
+  public void testGetDiffHashCodes() {
+    testCalories.addValue("Example", 25.0);
+    assertFalse("Could not get different hash codes for different CaloriesNutritions",
+        testCalories.hashCode() == otherCalories.hashCode());
+  }
 }
