@@ -12,6 +12,7 @@ public class CaloriesNutrition implements NutritionType {
 
   private Double total = 0.0;
   private HashSet<String> namesSet = new HashSet<>();
+  private HashMap<String, Double> values = new HashMap<>();
   
   /**
    * Returns the total for this CaloriesNutrition.
@@ -35,6 +36,7 @@ public class CaloriesNutrition implements NutritionType {
   public void addValue(String name, Double value) {
     total += value;
     namesSet.add(name);
+    values.put(name, value);
   }
 
   @Override
@@ -44,7 +46,7 @@ public class CaloriesNutrition implements NutritionType {
 
   @Override
   public Double getSubcategoryValue(String name) {
-    return 0.0;
+    return values.get(name) == null ? 0.0 : values.get(name);
   }
 
   @Override
