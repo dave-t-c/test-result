@@ -39,4 +39,16 @@ public class TestCaloriesNutrition {
     assertEquals("Could not add value to Calories Nutrition",
         5.0, testCalories.getTotal(), 0.0);
   }
+  
+  /**
+   * Test to try and get the name for the CaloriesNutrition Object.
+   * This should be 'Calories'.
+   */
+  @Test
+  public void testGetCaloriesName() {
+    assertEquals("Could not get correct Name for Calories Nutrition",
+        "Calories", testCalories.getName());
+  }
+  
+  
 }
