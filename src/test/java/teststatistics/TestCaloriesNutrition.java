@@ -83,5 +83,16 @@ public class TestCaloriesNutrition {
         0.0, testCalories.getSubcategoryValue("Other"), 0.0);
   }
   
+  /**
+   * Test to try and get the category value for an item that has been added.
+   * The value returned should be the same as the value added.
+   */
+  @Test
+  public void testGetAddedSubcategoryValue() {
+    testCalories.addValue("Other", 12.0);
+    assertEquals("Could not get value for added category",
+        12.0, testCalories.getSubcategoryValue("Other"), 0.0);
+  }
+  
   
 }
