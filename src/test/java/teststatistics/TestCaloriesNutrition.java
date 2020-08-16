@@ -184,6 +184,6 @@ public class TestCaloriesNutrition {
   public void testGetFormattedStringNonEmpty() {
     testCalories.addValue("Example", 25.0);
     assertEquals("Could not get formatted String from non-empty CaloriesNutrition",
-        "Name: Calories, Values: {Example:25.0,}, Total: 0.0", testCalories.toString());
+        "Name: Calories, Values: {Example:25.0,}, Total: 25.0", testCalories.toString());
   }
 }
