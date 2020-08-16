@@ -219,4 +219,15 @@ public class TestCaloriesNutrition {
     assertTrue("Could not get equal CaloriesNutrition Objects",
         testCalories.equals(otherCalories));
   }
+  
+  /**
+   * Test to try and compare different CaloriesNutrition Objects.
+   * This should return false as they have different items.
+   */
+  @Test
+  public void testGetCaloriesNutritionNotequal() {
+    testCalories.addValue("Other", 35.0);
+    assertFalse("Could not get unequal CaloriesNutrition",
+        testCalories.equals(otherCalories));
+  }
 }
