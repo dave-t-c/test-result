@@ -11,6 +11,7 @@ public class CaloriesNutrition implements NutritionType {
 
   private Double total = 0.0;
   private HashMap<String, Double> values = new HashMap<>();
+  private NutritionHelper helper = new NutritionHelper();
   
   /**
    * Returns the total for this CaloriesNutrition.
@@ -43,7 +44,7 @@ public class CaloriesNutrition implements NutritionType {
 
   @Override
   public Double getSubcategoryValue(String name) {
-    return values.get(name) == null ? 0.0 : values.get(name);
+    return helper.getValue(name, values);
   }
 
   @Override
