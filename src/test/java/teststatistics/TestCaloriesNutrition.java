@@ -131,4 +131,15 @@ public class TestCaloriesNutrition {
         0.0, testCalories.getTotal(), 0.0);
   }
   
+  /**
+   * Test to try and remove a null sub-category.
+   * The total should stay at 0.0.
+   */
+  @Test
+  public void testRemoveNullSubcategory() {
+    testCalories.removeSubcategory(null);
+    assertEquals("Could not handle removing null category",
+        0.0, testCalories.getTotal(), 0.0);
+  }
+  
 }
