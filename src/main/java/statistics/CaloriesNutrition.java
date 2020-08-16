@@ -61,16 +61,19 @@ public class CaloriesNutrition implements NutritionType {
     return helper.getValue(name, values);
   }
 
+  /**
+   * Removes the given sub-category. The total will be decreased by 
+   * the relevant amount - 0.0 if it doesn't exist, the value of the category if it does.
+   * @param name - Name of the sub-category to remove.
+   */
   @Override
   public void removeSubcategory(String name) {
     total -= helper.removeSubcategory(name, values);
-
   }
 
   @Override
   public HashMap<String, Double> getValues() {
-    // TODO Auto-generated method stub
-    return null;
+    return new HashMap<String, Double>();
   }
 
 }
