@@ -20,10 +20,13 @@ public class CaloriesNutrition implements NutritionType {
     return total;
   }
 
+  /**
+   * Gets the name of the Calories Nutrition Object.
+   * @return "Calories"
+   */
   @Override
   public String getName() {
-    // TODO Auto-generated method stub
-    return null;
+    return "Calories";
   }
 
   @Override
