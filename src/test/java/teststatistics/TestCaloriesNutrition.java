@@ -17,10 +17,12 @@ import org.junit.Test;
 public class TestCaloriesNutrition {
   
   private CaloriesNutrition testCalories;
+  private CaloriesNutrition otherCalories;
   
   @Before
   public void setUp() throws Exception {
     testCalories = new CaloriesNutrition();
+    otherCalories = new CaloriesNutrition();
   }
   
   /**
@@ -185,5 +187,15 @@ public class TestCaloriesNutrition {
     testCalories.addValue("Example", 25.0);
     assertEquals("Could not get formatted String from non-empty CaloriesNutrition",
         "Name: Calories, Values: {Example:25.0,}, Total: 25.0", testCalories.toString());
+  }
+  
+  /**
+   * Test to try and compare the hash code of different CaloriesNutritions.
+   * The hash code should be the same as the items are identical.
+   */
+  @Test
+  public void testGetEqualHashCodes() {
+    assertTrue("Could not get equal hash codes for identical CalorieNutritions",
+        testCalories.hashCode() == otherCalories.hashCode());
   }
 }
