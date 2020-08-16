@@ -119,4 +119,16 @@ public class TestCaloriesNutrition {
         testCalories.getSubcategoryNames().contains("Example"));
   }
   
+  /**
+   * Test to try and remove a sub-category.
+   * After removing the category, the total should be 0 again.
+   */
+  @Test
+  public void testRemoveSubcategoryTotal() {
+    testCalories.addValue("Other", 5.0);
+    testCalories.removeSubcategory("Other");
+    assertEquals("Could not get correct total after removing Sub-category",
+        0.0, testCalories.getTotal(), 0.0);
+  }
+  
 }
