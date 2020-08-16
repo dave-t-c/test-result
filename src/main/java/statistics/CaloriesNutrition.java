@@ -89,5 +89,10 @@ public class CaloriesNutrition implements NutritionType {
   public String toString() {
     return helper.getString(this);
   }
+  
+  @Override
+  public int hashCode() {
+    return 5;
+  }
 
 }
