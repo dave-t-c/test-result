@@ -101,7 +101,7 @@ public class CaloriesNutrition implements NutritionType {
   
   @Override
   public boolean equals(Object obj) {
-    return true;
+    return helper.getEqual(this, obj);
   }
 
 }
