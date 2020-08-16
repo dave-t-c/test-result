@@ -79,5 +79,10 @@ public class CaloriesNutrition implements NutritionType {
   public HashMap<String, Double> getValues() {
     return values;
   }
+  
+  @Override
+  public String toString() {
+    return "Name: Calories, Values: {}, Total: 0.0";
+  }
 
 }
