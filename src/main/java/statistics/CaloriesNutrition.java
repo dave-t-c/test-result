@@ -99,6 +99,11 @@ public class CaloriesNutrition implements NutritionType {
     return helper.getHashCode(this);
   }
   
+  /**
+   * Check if this CaloriesNutrition and another Object are equal
+   * @param obj - Object to compare this CaloriesNutrition with.
+   * @return - result of the equality test.
+   */
   @Override
   public boolean equals(Object obj) {
     return helper.getEqual(this, obj);
