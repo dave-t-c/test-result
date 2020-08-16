@@ -82,7 +82,7 @@ public class CaloriesNutrition implements NutritionType {
   
   @Override
   public String toString() {
-    return "Name: Calories, Values: {}, Total: 0.0";
+    return helper.getString(this);
   }
 
 }
