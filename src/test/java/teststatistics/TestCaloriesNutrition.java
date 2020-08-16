@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
+import java.util.HashMap;
 import main.java.statistics.CaloriesNutrition;
 import org.junit.Before;
 import org.junit.Test;
@@ -140,6 +141,16 @@ public class TestCaloriesNutrition {
     testCalories.removeSubcategory(null);
     assertEquals("Could not handle removing null category",
         0.0, testCalories.getTotal(), 0.0);
+  }
+  
+  /**
+   * Test to try and get the values map.
+   * No items have been added so, an empty map should be returned.
+   */
+  @Test
+  public void testGetEmptyValues() {
+    assertEquals("Could not get empty map from values",
+        new HashMap<String, Double>(), testCalories.getValues());
   }
   
 }
