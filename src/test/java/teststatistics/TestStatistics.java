@@ -1,6 +1,7 @@
 package test.java.teststatistics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import main.java.statistics.Statistics;
@@ -22,6 +23,19 @@ public class TestStatistics {
     Statistics testStats = new Statistics();
     assertEquals("Could not get empty stats object",
         Collections.emptySet(), testStats.getNutritionSet());
+  }
+  
+  /**
+   * Test to try and get a Nutrition type to the Statistics object.
+   * The added type should be in the returned set. 
+   */
+  @Test
+  public void testAddNutritionType() {
+    Statistics testStats = new Statistics();
+    MockNutritionType testNutrition = new MockNutritionType();
+    testStats.addNutrition(testNutrition);
+    assertTrue("Could not add Nutrition Type to Statistics",
+        testStats.getNutritionSet().contains(testNutrition));
   }
 
 }
