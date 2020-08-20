@@ -55,5 +55,16 @@ public class TestStatistics {
     assertEquals("Could not handle null NutritionType",
         Collections.emptySet(), testStats.getNutritionSet());
   }
+  
+  /**
+   * Test to try and get a Specific Nutrition from Statistics.
+   * The Nutrition returned should be the same as added.
+   */
+  @Test
+  public void testGetNutritionAdded() {
+    testStats.addNutrition(testNutrition);
+    assertEquals("Could not get the correct Nutrition",
+        testNutrition, testStats.getNutrition(testNutrition.getName()));
+  }
 
 }
