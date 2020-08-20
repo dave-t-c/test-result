@@ -18,7 +18,10 @@ public class TestStatistics {
   private MockNutritionType testNutrition;
   private MockNutritionDifferent diffNutrition;
   
-  
+  /**
+   * Sets up all of the variables for the tests.
+   * @throws Exception - Thrown if an error occurs when constructing variables.
+   */
   @Before
   public void setUp() throws Exception {
     testStats = new Statistics();
