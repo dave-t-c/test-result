@@ -45,7 +45,6 @@ public class TestStatistics {
   @Test
   public void testAddNullType() {
     Statistics testStats = new Statistics();
-    MockNutritionType testNutrition = new MockNutritionType();
     testStats.addNutrition(null);
     assertEquals("Could not handle null NutritionType",
         Collections.emptySet(), testStats.getNutritionSet());
