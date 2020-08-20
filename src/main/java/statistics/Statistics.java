@@ -34,7 +34,7 @@ public class Statistics {
    * @param nutrition - NutirionType to add.
    */
   public void addNutrition(NutritionType nutrition) {
-    if (nutrition != null) {      
+    if (nutrition != null && nutrition.getName() != null) {      
       nutritionTypes.put(nutrition.getName(), nutrition);
     }
   }
