@@ -1,8 +1,8 @@
 package main.java.statistics;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import test.java.teststatistics.MockNutritionType;
 
 /**
  * Class for storing the statistics of a meal. 
@@ -11,14 +11,18 @@ import test.java.teststatistics.MockNutritionType;
  */
 public class Statistics {
   
-  HashSet<NutritionType> nutritionTypes;
+  HashMap<String, NutritionType> nutritionTypes;
   
   public Statistics() {
-    nutritionTypes = new HashSet<>();
+    nutritionTypes = new HashMap<>();
   }
   
   public Set<NutritionType> getNutritionSet() {
-    return nutritionTypes;
+    Set<NutritionType> nutritionSet = new HashSet<>();
+    for (String key : nutritionTypes.keySet()) {
+      nutritionSet.add(nutritionTypes.get(key));
+    }
+    return nutritionSet;
   }
   
   /**
@@ -27,11 +31,11 @@ public class Statistics {
    */
   public void addNutrition(NutritionType nutrition) {
     if (nutrition != null) {      
-      nutritionTypes.add(nutrition);
+      nutritionTypes.put(nutrition.getName(), nutrition);
     }
   }
   
   public NutritionType getNutrition(String name) {
-    return new MockNutritionType();
+    return nutritionTypes.get(name);
   }
 }
