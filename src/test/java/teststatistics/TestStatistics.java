@@ -37,5 +37,18 @@ public class TestStatistics {
     assertTrue("Could not add Nutrition Type to Statistics",
         testStats.getNutritionSet().contains(testNutrition));
   }
+  
+  /**
+   * Test to try and add a null NutritionType to Statistics.
+   * The NutritionType should not be added and the NutritionSet should be empty.
+   */
+  @Test
+  public void testAddNullType() {
+    Statistics testStats = new Statistics();
+    MockNutritionType testNutrition = new MockNutritionType();
+    testStats.addNutrition(null);
+    assertEquals("Could not handle null NutritionType",
+        Collections.emptySet(), testStats.getNutritionSet());
+  }
 
 }
