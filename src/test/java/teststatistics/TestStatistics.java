@@ -17,6 +17,7 @@ public class TestStatistics {
   private Statistics testStats;
   private MockNutritionType testNutrition;
   private MockNutritionDifferent diffNutrition;
+  private MockNutritionTypeNullName nullNameNutrition;
   
   /**
    * Sets up all of the variables for the tests.
@@ -27,6 +28,7 @@ public class TestStatistics {
     testStats = new Statistics();
     testNutrition = new MockNutritionType();
     diffNutrition = new MockNutritionDifferent();
+    nullNameNutrition = new MockNutritionTypeNullName();
   }
   
   /**
@@ -82,6 +84,17 @@ public class TestStatistics {
     testStats.addNutrition(diffNutrition);
     assertEquals("Could not get the different Nutrition from Statistics",
         diffNutrition, testStats.getNutrition(diffNutrition.getName()));    
+  }
+  
+  /**
+   * Test to try and add a nutrition with a null name.
+   * The item should not be added and the returned list should be empty.
+   */
+  @Test
+  public void testAddNullNutritionName() {
+    testStats.addNutrition(nullNameNutrition);
+    assertTrue("Could not handle NutritionType with null name",
+        testStats.getNutritionSet().isEmpty());
   }
 
 }
