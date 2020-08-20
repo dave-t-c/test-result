@@ -17,6 +17,10 @@ public class Statistics {
     nutritionTypes = new HashMap<>();
   }
   
+  /**
+   * Gets the set of NutritionTypes in this Statistics Object.
+   * @return - Set of the NutritionTypes added.
+   */
   public Set<NutritionType> getNutritionSet() {
     Set<NutritionType> nutritionSet = new HashSet<>();
     for (String key : nutritionTypes.keySet()) {
