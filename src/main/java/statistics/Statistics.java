@@ -10,11 +10,17 @@ import java.util.Set;
  */
 public class Statistics {
   
+  HashSet<NutritionType> nutritionTypes;
+  
   public Statistics() {
-    
+    nutritionTypes = new HashSet<>();
   }
   
   public Set<NutritionType> getNutritionSet() {
-    return new HashSet<NutritionType>();
+    return nutritionTypes;
+  }
+  
+  public void addNutrition(NutritionType nutrition) {
+    nutritionTypes.add(nutrition);
   }
 }
