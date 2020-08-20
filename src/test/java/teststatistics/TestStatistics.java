@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import main.java.statistics.Statistics;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -13,6 +14,15 @@ import org.junit.Test;
  */
 public class TestStatistics {
   
+  private Statistics testStats;
+  private MockNutritionType testNutrition;
+  
+  @Before
+  public void setUp() throws Exception {
+    testStats = new Statistics();
+    testNutrition = new MockNutritionType();
+  }
+  
   /**
    * Test to try and create a new Statistics Object and 
    * get the Set of Nutrition.
@@ -20,7 +30,6 @@ public class TestStatistics {
    */
   @Test
   public void testCreateStatistics() {
-    Statistics testStats = new Statistics();
     assertEquals("Could not get empty stats object",
         Collections.emptySet(), testStats.getNutritionSet());
   }
@@ -31,8 +40,6 @@ public class TestStatistics {
    */
   @Test
   public void testAddNutritionType() {
-    Statistics testStats = new Statistics();
-    MockNutritionType testNutrition = new MockNutritionType();
     testStats.addNutrition(testNutrition);
     assertTrue("Could not add Nutrition Type to Statistics",
         testStats.getNutritionSet().contains(testNutrition));
@@ -44,7 +51,6 @@ public class TestStatistics {
    */
   @Test
   public void testAddNullType() {
-    Statistics testStats = new Statistics();
     testStats.addNutrition(null);
     assertEquals("Could not handle null NutritionType",
         Collections.emptySet(), testStats.getNutritionSet());
