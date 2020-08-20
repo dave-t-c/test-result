@@ -78,7 +78,7 @@ public class TestStatistics {
   public void testGetDiffNutrition() {
     testStats.addNutrition(diffNutrition);
     assertEquals("Could not get the different Nutrition from Statistics",
-        testNutrition, testStats.getNutrition(testNutrition.getName()));    
+        diffNutrition, testStats.getNutrition(testNutrition.getName()));    
   }
 
 }
