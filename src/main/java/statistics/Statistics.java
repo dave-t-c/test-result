@@ -2,11 +2,12 @@ package main.java.statistics;
 
 import java.util.HashSet;
 import java.util.Set;
+import test.java.teststatistics.MockNutritionType;
 
 /**
  * Class for storing the statistics of a meal. 
  * This object will store multiple nutrition types.
- * @author davidcook
+ * @author dave-t-c
  */
 public class Statistics {
   
@@ -28,5 +29,9 @@ public class Statistics {
     if (nutrition != null) {      
       nutritionTypes.add(nutrition);
     }
+  }
+  
+  public NutritionType getNutrition(String name) {
+    return new MockNutritionType();
   }
 }
