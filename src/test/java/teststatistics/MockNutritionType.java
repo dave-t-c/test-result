@@ -2,6 +2,7 @@ package test.java.teststatistics;
 
 import java.util.HashMap;
 import java.util.Set;
+import main.java.statistics.NutritionHelper;
 import main.java.statistics.NutritionType;
 
 /**
@@ -11,6 +12,7 @@ import main.java.statistics.NutritionType;
 public class MockNutritionType implements NutritionType {
   HashMap<String, Double> valuesMap = new HashMap<>();
   Double total = 0.0;
+  NutritionHelper helper = new NutritionHelper();
 
   @Override
   public Double getTotal() {
@@ -46,6 +48,11 @@ public class MockNutritionType implements NutritionType {
   @Override
   public HashMap<String, Double> getValues() {
     return valuesMap;
+  }
+  
+  @Override
+  public boolean equals(Object obj) {
+    return helper.getEqual(this, obj);
   }
 
 }
