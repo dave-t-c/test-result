@@ -20,7 +20,13 @@ public class Statistics {
     return nutritionTypes;
   }
   
+  /**
+   * Adds a NutritionType to the Statistics.
+   * @param nutrition - NutirionType to add.
+   */
   public void addNutrition(NutritionType nutrition) {
-    nutritionTypes.add(nutrition);
+    if (nutrition != null) {      
+      nutritionTypes.add(nutrition);
+    }
   }
 }
