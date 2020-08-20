@@ -16,11 +16,14 @@ public class TestStatistics {
   
   private Statistics testStats;
   private MockNutritionType testNutrition;
+  private MockNutritionDifferent diffNutrition;
+  
   
   @Before
   public void setUp() throws Exception {
     testStats = new Statistics();
     testNutrition = new MockNutritionType();
+    diffNutrition = new MockNutritionDifferent();
   }
   
   /**
@@ -65,6 +68,17 @@ public class TestStatistics {
     testStats.addNutrition(testNutrition);
     assertEquals("Could not get the correct Nutrition",
         testNutrition, testStats.getNutrition(testNutrition.getName()));
+  }
+  
+  /**
+   * Test to try and get a different NutritionType from getNutrition method.
+   * This should return the different NutritionType.
+   */
+  @Test
+  public void testGetDiffNutrition() {
+    testStats.addNutrition(diffNutrition);
+    assertEquals("Could not get the different Nutrition from Statistics",
+        testNutrition, testStats.getNutrition(testNutrition.getName()));    
   }
 
 }
